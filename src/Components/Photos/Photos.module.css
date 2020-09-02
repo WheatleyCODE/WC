@@ -1,0 +1,12 @@
+.photosMain {
+  width: 795px;
+  margin:55px 15px;
+}
+.alboms, .photos {
+  width: 795px;
+  height: 310px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
+  margin-bottom: 30px;
+}

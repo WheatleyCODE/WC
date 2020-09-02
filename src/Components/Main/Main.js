@@ -10,6 +10,12 @@ import News from '../News/News';
 import NewsMenu from '../News/NewsMenu/NewsMenu';
 import Friends from '../Friends/Friends';
 import FriendsMenu from '../Friends/FriendsMenu/FriendsMenu';
+import Photos from '../Photos/Photos';
+import Music from '../Music/Music';
+import Video from '../Video/Video';
+import Games from '../Games/Games';
+import Clips from '../Clips/Clips';
+import ClipsMenu from '../Clips/ClipsMenu/ClipsMenu';
 
 function Main() {
   return (
@@ -27,6 +33,17 @@ function Main() {
 
         <Route path='/friends' component={Friends} />
         <Route path='/friends' component={FriendsMenu} />
+
+        <Route path='/photos' component={Photos} />
+
+        <Route path='/music' component={Music} />
+        <Route path='/video' component={Video} />
+        <Route path='/game' component={Games} />
+        
+        <Route path='/clips' component={Clips} />
+        <Route path='/clips' component={ClipsMenu} />
+
+
 
       </div>
     </BrowserRouter>

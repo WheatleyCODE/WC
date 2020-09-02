@@ -22,7 +22,17 @@
   align-items: center;
 }
 .logo {
-  margin-left:15px;
+  margin-left:5px;
+}
+.logo i {
+  color: rgb(255, 255, 255);
+  font-size: 35px;
+}
+.logo i:active {
+  height: 38px;
+}
+.logo i:hover{
+  cursor: pointer;
 }
 .noti:hover, .music:hover, .logIn:hover {
   background-color: #08080813;
@@ -30,7 +40,7 @@
 }
 .search {
   width: 230px;
-  margin-left:100px;
+  margin-left:110px;
 }
 .search input {
   width: 185px;
@@ -41,7 +51,11 @@
   padding: 4px 21px;
 }
 .noti {
-  margin-left:10px ;
+  margin-left:5px ;
+}
+.noti i {
+  font-size: 18px ;
+  color: #1a3a5f;
 }
 .music {
   width: 290px;

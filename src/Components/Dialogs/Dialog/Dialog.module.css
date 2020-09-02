@@ -6,6 +6,10 @@
   border-bottom:1px solid #6d8dac31;
   position: relative;
 }
+.link  {
+  text-decoration: none;
+  color: #000;
+}
 .dialog:hover {
   cursor: pointer;
   background-color: rgba(15, 15, 15, 0.061) ;
