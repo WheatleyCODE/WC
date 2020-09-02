@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  font-family: Tahoma, Verdana;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App-logo {
@@ -11,6 +15,10 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+body {
+  background-color: rgb(238, 238, 238);
 }
 
 .App-header {
@@ -36,3 +44,5 @@
     transform: rotate(360deg);
   }
 }
+
+

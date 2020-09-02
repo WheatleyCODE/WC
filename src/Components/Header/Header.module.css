@@ -1,0 +1,53 @@
+.main_header {
+  height: 42px;
+  width: 100%;
+  background-color: #4a76a8;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 100;
+}
+.button_panel {
+  /* background-color: #4e6f94; */
+  width: 960px;
+  height: 40px;
+  display: flex;
+}
+.logo, .search, .noti, .music, .logIn {
+  height: 40px;
+  width: 40px;
+  margin-right:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  margin-left:15px;
+}
+.noti:hover, .music:hover, .logIn:hover {
+  background-color: #08080813;
+  cursor: pointer;
+}
+.search {
+  width: 230px;
+  margin-left:100px;
+}
+.search input {
+  width: 185px;
+  height: 21px;
+  background-color: #224b7a;
+  border: none;
+  border-radius: 20px;
+  padding: 4px 21px;
+}
+.noti {
+  margin-left:10px ;
+}
+.music {
+  width: 290px;
+}
+.logIn {
+  width: 140px;
+  margin-left:60px ;
+  margin-right:0px;
+}

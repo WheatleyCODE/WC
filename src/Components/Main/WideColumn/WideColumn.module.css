@@ -1,0 +1,28 @@
+.wide_column {
+  width: 560px;
+  height: 1100px;
+  margin:55px 0px;
+}
+.info_block {
+  width: 550px;
+  height: 240px;
+  background-color:#fdfdfd;
+  border-radius:5px;
+  box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
+}
+.photo_block {
+  width: 550px;
+  height: 180px;
+  background-color:#fdfdfd;
+  border-radius:5px;
+  margin-top:18px ;
+  box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
+}
+.news_block {
+  width: 550px;
+  height: 60px;
+  background-color:#fdfdfd;
+  border-radius:5px;
+  margin-top:18px ;
+  box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
+}

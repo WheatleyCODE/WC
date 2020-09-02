@@ -1,0 +1,9 @@
+.post_block {
+  width: 550px;
+  height: 560px;
+  background-color:#fdfdfd;
+  border-radius:5px;
+  margin-top:18px ;
+  box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
+  padding-top: 40px;
+}

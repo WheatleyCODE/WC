@@ -1,0 +1,31 @@
+.side_bar {
+  width: 149px;
+  height: 1100px;
+  margin:55px 0px;
+}
+.aside_block {
+  width: 149px;
+  height: 800px;
+  margin-top:18px ;
+  background-color: #fff;
+}
+.side_bar li {
+  list-style-type: none;
+  text-align: start;
+  padding: 5px 25px;
+  font-size: 13px;
+  border-radius: 3px;
+}
+
+.side_bar li:hover {
+  background-color:rgba(88, 118, 141, 0.151);
+  cursor: pointer;
+}
+.navLink {
+  text-decoration: none;
+  color: #406794;
+}
+hr {
+  border:none;
+  border-bottom:1px solid #6d8cac4f;
+}

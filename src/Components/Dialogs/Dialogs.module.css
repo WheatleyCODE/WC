@@ -1,0 +1,23 @@
+.dialogs {
+  width: 543px;
+  height: 1000px;
+  background-color:#ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
+  margin:15px;
+  margin-top: 55px;
+}
+.searchDialogs {
+  width: 543px;
+  height: 50px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom:1px solid #6d8cac4f;
+}
+.searchDialogs input {
+  height: 40px;
+  width: 85%;
+  border:none;
+}
