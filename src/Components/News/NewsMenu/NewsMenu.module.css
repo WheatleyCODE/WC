@@ -1,8 +1,24 @@
-.newsNenu {
+.DialogsMenu {
   width: 240px;
   height: 100px;
   margin-top: 55px;
   background-color:#ffffff;
   border-radius: 5px;
   box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
+}
+.DialogsMenu div {
+  display: flex;
+  flex-direction: column;
+}
+.DialogsMenu div a {
+  height: 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #406794;
+  padding: 1px 5px;
+}
+.DialogsMenu div a:hover {
+  background-color: rgba(96, 113, 144, 0.137);
 }

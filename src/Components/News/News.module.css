@@ -1,9 +1,27 @@
-.news {
+.newsMain {
   width: 543px;
   height: 1000px;
+  margin:15px;
+  margin-top: 55px;
+}
+.newsUser, .history, .newsBlock {
   background-color:#ffffff;
   border-radius: 5px;
   box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
-  margin:15px;
-  margin-top: 55px;
+  margin-bottom: 15px;
+}
+.newsUser {
+  width: 543px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.history {
+  width: 543px;
+  height: 230px;
+}
+.newsBlock {
+  width: 543px;
+  height: 430px;
 }
