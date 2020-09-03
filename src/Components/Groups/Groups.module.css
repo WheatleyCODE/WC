@@ -1,0 +1,16 @@
+.groupsMain {
+  width: 543px;
+  height: 1000px;
+  margin:15px;
+  margin-top: 55px;
+}
+.groupsBlock {
+  background-color:#ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
+  margin-bottom: 15px;
+}
+.groupsBlock {
+  width: 543px;
+  height: 430px;
+}

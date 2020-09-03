@@ -1,13 +1,15 @@
-.friendsMenu {
+.groupsMenu {
   width: 240px;
-  height: 215px;
+  height: 185px;
   margin-top: 55px;
   background-color:#ffffff;
   border-radius: 5px;
   box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
 }
-.friendsMenu div {
-  margin-top: 2px;
+.groupsMenu div {
+  display: flex;
+  flex-direction: column;
+  margin-top:3px;
 }
 .navLink{
   height: 30px;
@@ -21,10 +23,11 @@
   border-left:2px solid rgb(255, 255, 255);
   font-size: 14px;
 }
-.friendsMenu div a:hover {
+.groupsMenu div a:hover {
   background-color: rgba(96, 113, 144, 0.137);
 }
-.friendsMenu hr {
+
+.groupsMenu hr {
   width: 90%;
   border-bottom:1px solid #6d8dac3b;
 }

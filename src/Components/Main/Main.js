@@ -16,6 +16,8 @@ import Video from '../Video/Video';
 import Games from '../Games/Games';
 import Clips from '../Clips/Clips';
 import ClipsMenu from '../Clips/ClipsMenu/ClipsMenu';
+import Groups from '../Groups/Groups';
+import GroupsMenu from '../Groups/GroupsMenu/GroupsMenu';
 
 function Main() {
   return (
@@ -28,8 +30,11 @@ function Main() {
         <Route path='/dialogs' component={Dialogs} />
         <Route path='/dialogs' component={DialogsMenu} />
 
-        <Route path='/news' component={News} />
-        <Route path='/news' component={NewsMenu} />
+        <Route path='/feed' component={News} />
+        <Route path='/feed' component={NewsMenu} />
+
+        <Route path='/groups' component={Groups} />
+        <Route path='/groups' component={GroupsMenu} />
 
         <Route path='/friends' component={Friends} />
         <Route path='/friends' component={FriendsMenu} />

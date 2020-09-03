@@ -6,9 +6,10 @@ function SideBar() {
     <div className={s.side_bar}>
       <nav>
         <NavLink className={s.navLink} to='/profile' activeClassName={s.active}><li><i class="fa fa-home" aria-hidden="true"></i><span>Моя страница</span></li></NavLink>
-        <NavLink className={s.navLink} to='/news' activeClassName={s.active}><li><i class="fa fa-newspaper-o" aria-hidden="true"></i><span>Новости</span></li></NavLink>
-        <NavLink className={s.navLink} to='/friends' activeClassName={s.active}><li><i class="fa fa-user" aria-hidden="true"></i><span>Друзья<span className={s.count} >3</span></span></li></NavLink>
+        <NavLink className={s.navLink} to='/feed' activeClassName={s.active}><li><i class="fa fa-newspaper-o" aria-hidden="true"></i><span>Новости</span></li></NavLink>
         <NavLink className={s.navLink} to='/dialogs' activeClassName={s.active}><li><i class="fa fa-comments" aria-hidden="true"></i><span>Сообщения</span></li></NavLink>
+        <NavLink className={s.navLink} to='/friends' activeClassName={s.active}><li><i class="fa fa-user" aria-hidden="true"></i><span>Друзья<span className={s.count} >3</span></span></li></NavLink>
+        <NavLink className={s.navLink} to='/groups' activeClassName={s.active}><li><i class="fa fa-users" aria-hidden="true"></i><span>Сообщества</span></li></NavLink>
         <NavLink className={s.navLink} to='/photos' activeClassName={s.active}><li><i class="fa fa-camera" aria-hidden="true"></i><span>Фотографии</span></li></NavLink>
         <NavLink className={s.navLink} to='/music' activeClassName={s.active}><li><i class="fa fa-music" aria-hidden="true"></i><span>Музыка</span></li></NavLink>
         <NavLink className={s.navLink} to='/video' activeClassName={s.active}><li><i class="fa fa-video-camera" aria-hidden="true"></i><span>Видео</span></li></NavLink>

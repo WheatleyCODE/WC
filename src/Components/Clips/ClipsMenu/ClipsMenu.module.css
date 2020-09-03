@@ -1,4 +1,4 @@
-.DialogsMenu {
+.clipsMenu {
   width: 240px;
   height: 100px;
   margin-top: 55px;
@@ -6,19 +6,27 @@
   border-radius: 5px;
   box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
 }
-.DialogsMenu div {
+.clipsMenu div {
   display: flex;
   flex-direction: column;
+  margin-top:2px;
 }
-.DialogsMenu div a {
+.navLink{
   height: 30px;
   text-decoration: none;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #406794;
+  justify-content: left;
+  color: #4d6c8f;
   padding: 1px 5px;
+  padding-left:22px;
+  border-left:2px solid rgb(255, 255, 255);
+  font-size: 14px;
 }
-.DialogsMenu div a:hover {
+.clipsMenu div a:hover {
   background-color: rgba(96, 113, 144, 0.137);
+}
+.active {
+  border-left: 2px solid #5584b9;
+  color: black;
 }
