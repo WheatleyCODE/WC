@@ -25,7 +25,10 @@ function Main(props) {
       <div className={s.main_div}>
         <SideBar />
         <Route path='/profile' component={NarrowColumnWrap} />
-        <Route path='/profile' render={ () => <WideColumn addPost={props.addPost} postData={props.state.postData} />} />
+        <Route path='/profile' render={ () => <WideColumn newPostText={props.state.newPostText}
+                                                          addNewTextPost={props.addNewTextPost} 
+                                                          addPost={props.addPost}
+                                                          postData={props.state.postData} />} />
 
         <Route path='/dialogs' render={ () => <Dialogs dialogsData={props.state.dialogsData} />} />
         <Route path='/dialogs' component={DialogsMenu} />
