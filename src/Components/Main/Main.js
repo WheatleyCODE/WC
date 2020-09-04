@@ -19,15 +19,15 @@ import ClipsMenu from '../Clips/ClipsMenu/ClipsMenu';
 import Groups from '../Groups/Groups';
 import GroupsMenu from '../Groups/GroupsMenu/GroupsMenu';
 
-function Main() {
+function Main(props) {
   return (
     <BrowserRouter>
       <div className={s.main_div}>
         <SideBar />
         <Route path='/profile' component={NarrowColumnWrap} />
-        <Route path='/profile' component={WideColumn} />
+        <Route path='/profile' render={ () => <WideColumn addPost={props.addPost} postData={props.state.postData} />} />
 
-        <Route path='/dialogs' component={Dialogs} />
+        <Route path='/dialogs' render={ () => <Dialogs dialogsData={props.state.dialogsData} />} />
         <Route path='/dialogs' component={DialogsMenu} />
 
         <Route path='/feed' component={News} />
@@ -47,8 +47,6 @@ function Main() {
         
         <Route path='/clips' component={Clips} />
         <Route path='/clips' component={ClipsMenu} />
-
-
 
       </div>
     </BrowserRouter>

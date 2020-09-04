@@ -7,11 +7,12 @@ import Aside from './Components/Aside/Aside'
 
 
 
-function App() {
+
+function App(props) {
   return (
     <div className="App">
       <Header />
-      <Main />
+      <Main addPost={props.addPost} state={props.state} />
       <Aside />
       <Footer />
     </div>
