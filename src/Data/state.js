@@ -12,8 +12,6 @@ let state = {
   ],
   postData: [
     {id: 1337, message: 'Hey this is post, really?'},
-    {id: 1338, message: 'The best technplpgies!!!'},
-    {id: 1339, message: '42? Realy? Cool! 123'},
   ]
 }
 

@@ -7,7 +7,9 @@ function WideColumn(props) {
   let newPostElement = React.createRef();
 
   function alertPost() {
-    props.addPost(newPostElement.current.value)
+    let text = newPostElement.current.value
+    props.addPost(text)
+    newPostElement.current.value = ''
   }
   
   let posts = props.postData.map(obj => <Post message={obj.message} id={obj.id} />)
@@ -22,8 +24,9 @@ function WideColumn(props) {
           <button onClick={alertPost} >Опубликовать</button>
           
         </div>
-        
-        {posts}
+        <div className={s.postColumn}>
+          {posts}
+        </div>
       </div>
   )
 }
