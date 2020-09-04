@@ -1,9 +1,9 @@
 .gameMain {
-  width: 880px;
+  width: 796px;
   margin:55px 15px;
 }
 .game {
-  width: 795px;
+  width: 796px;
   height: 110px;
   background-color: #fff;
   border-radius: 5px;
@@ -11,7 +11,7 @@
   margin-bottom: 30px;
 }
 .vgameCatalog {
-  width: 795px;
+  width: 796px;
   height: 310px;
   background-color: #fff;
   border-radius: 5px;
