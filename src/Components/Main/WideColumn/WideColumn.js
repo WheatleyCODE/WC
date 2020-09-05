@@ -1,18 +1,21 @@
 import React from 'react';
 import s from './WideColumn.module.css';
 import Post from './Post/Post'
+import { addNewTextPostActionCreator, addPostActionCreator } from '../../../Redux/store';
 
 function WideColumn(props) {
+
+  
  
   let newPostElement = React.createRef();
 
   function onChangefn() {
     let text = newPostElement.current.value
-    props.store.addNewTextPost(text)
+    props.store.dispatch( addNewTextPostActionCreator(text) )
   }
 
   function printPost() {
-    props.store.addPost()
+    props.store.dispatch( addPostActionCreator() )
   }
 
   let posts = props.store.state.postData.map(obj => <Post message={obj.message} id={obj.id} />)

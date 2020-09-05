@@ -6,6 +6,8 @@
 // store.js <----- Система управления <----> components
 // store.js -----------------------------------↑
 
+const ADD_POST = 'ADD-POST'
+const ADD_NEW_TEXT_POST = 'ADD-NEW-TEXT-POST'
 
 let store = {
 
@@ -67,10 +69,45 @@ let store = {
           }, index*100)
         })
       }
+  },
+
+  dispatch(action) {
+    if (action.type === 'ADD-POST') {
+
+      let arr = store.state.postData
+      let newPost = {
+        id: arr[arr.length - 1].id + 1 ,
+        message: store.state.newPostText
+      }
+        if (newPost.message !== '') {
+          arr.push(newPost)
+          this.state.newPostText = ''
+          this.rerenderEnTree(store)
+        } else {
+          let message = ['Д','а','р','о','в','а',' ','м','и','с','т','е','р',' ','Л','у','р','е','ч','е','к',]
+          message.forEach((elem, index) => {
+            setTimeout(() => {
+              this.state.newPostText += elem
+              this.rerenderEnTree(store)
+            }, index*100)
+          })
+        }
+
+    } else if(action.type === 'ADD-NEW-TEXT-POST') {
+
+      this.state.newPostText = action.newText
+      this.rerenderEnTree(store)
+
+    }
   }
-  
+
 }
 
+export const addPostActionCreator = () => ({type: ADD_POST})
+
+export const addNewTextPostActionCreator = (text) => {
+  return {type: ADD_NEW_TEXT_POST, newText: text}
+}
 
 
 export default store
