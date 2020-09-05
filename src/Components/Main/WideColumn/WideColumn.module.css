@@ -25,6 +25,16 @@
   border-radius:5px;
   margin-top:18px ;
   box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.news_block textarea {
+  width: 400px;
+  resize: none;
+}
+.news_block button {
+  height:37px ;
 }
 .postColumn {
   display: flex;
