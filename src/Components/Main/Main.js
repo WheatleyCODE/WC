@@ -37,7 +37,7 @@ function Main(props) {
         <Route path='/groups' component={Groups} />
         <Route path='/groups' component={GroupsMenu} />
 
-        <Route path='/friends' component={Friends} />
+        <Route path='/friends' render={ () => <Friends store ={props.store}/>} />
         <Route path='/friends' component={FriendsMenu} />
 
         <Route path='/photos' component={Photos} />
