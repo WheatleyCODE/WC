@@ -1,4 +1,10 @@
-import { rerenderEnTree } from "../render"
+let rerenderEnTree = () => {
+  
+}
+
+export function renderTree(fn) {
+  rerenderEnTree = fn
+}
 
 
 let state = {
