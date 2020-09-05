@@ -20,17 +20,15 @@ import Groups from '../Groups/Groups';
 import GroupsMenu from '../Groups/GroupsMenu/GroupsMenu';
 
 function Main(props) {
+
   return (
     <BrowserRouter>
       <div className={s.main_div}>
         <SideBar />
         <Route path='/profile' component={NarrowColumnWrap} />
-        <Route path='/profile' render={ () => <WideColumn newPostText={props.state.newPostText}
-                                                          addNewTextPost={props.addNewTextPost} 
-                                                          addPost={props.addPost}
-                                                          postData={props.state.postData} />} />
+        <Route path='/profile' render={ () => <WideColumn store = {props.store} />} />
 
-        <Route path='/dialogs' render={ () => <Dialogs dialogsData={props.state.dialogsData} />} />
+        <Route path='/dialogs' render={ () => <Dialogs store={props.store} />} />
         <Route path='/dialogs' component={DialogsMenu} />
 
         <Route path='/feed' component={News} />

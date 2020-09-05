@@ -12,9 +12,7 @@ function App(props) {
   return (
     <div className="App">
       <Header />
-      <Main addNewTextPost={props.addNewTextPost} 
-            addPost={props.addPost}
-            state={props.state} />
+      <Main store = {props.store} />
       <Aside />
       <Footer />
     </div>

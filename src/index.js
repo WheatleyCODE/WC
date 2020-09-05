@@ -1,15 +1,15 @@
 
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import state, { addPost, addNewTextPost, renderTree } from './Data/state';
+import store from './Data/store';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-export function rerenderEnTree (addPost, state, addNewTextPost) {
+export function rerenderEnTree (store) {
   ReactDOM.render(
   <React.StrictMode>
-  <App addNewTextPost={addNewTextPost} addPost={addPost} state={state}/>
+  <App store={store}/>
   </React.StrictMode>,
   document.getElementById('root')
   );
@@ -19,8 +19,8 @@ export function rerenderEnTree (addPost, state, addNewTextPost) {
 
 
 
-rerenderEnTree(addPost, state, addNewTextPost)
-renderTree(rerenderEnTree)
+rerenderEnTree(store)
+store.renderTree(rerenderEnTree)
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -3,10 +3,6 @@ import s from './Post.module.css';
 
 function Post(props) {
 
-  // function alertPost() {
-  //   alert(props.message)
-  // }
-
   return (
         <div className={s.post_block}>
           <h4>{props.message}</h4>

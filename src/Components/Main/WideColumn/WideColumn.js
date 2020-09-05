@@ -3,26 +3,30 @@ import s from './WideColumn.module.css';
 import Post from './Post/Post'
 
 function WideColumn(props) {
+  console.log('**************')
+  console.log(props.store)
+  console.log(props.store.state.newPostText)
+
+
   let newPostElement = React.createRef();
 
   function onChangefn() {
     let text = newPostElement.current.value
-    props.addNewTextPost(text)
-    
+    props.store.addNewTextPost(text)
   }
 
   function printPost() {
-    props.addPost()
+    props.store.addPost()
   }
-  let posts = props.postData.map(obj => <Post message={obj.message} id={obj.id} />)
 
+  let posts = props.store.state.postData.map(obj => <Post message={obj.message} id={obj.id} />)
+  
   return (
       <div className={s.wide_column}>
         <div className={s.info_block}></div>
         <div className={s.photo_block}></div>
         <div className={s.news_block}>
-
-          <textarea onChange={onChangefn} value={props.newPostText} ref={newPostElement}></textarea>
+          <textarea onChange={onChangefn} value={props.store.state.newPostText} ref={newPostElement}></textarea>
           <button onClick={printPost} >Опубликовать</button>
           
         </div>
