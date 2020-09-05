@@ -1,4 +1,11 @@
 
+// Можно ещё создать систему управления store и state 38,39
+// dispatch action и тд...
+// action creator и action type и тд..
+// Redux мб..
+// store.js <----- Система управления <----> components
+// store.js -----------------------------------↑
+
 
 let store = {
 
@@ -18,7 +25,7 @@ let store = {
       {id: '21521', name: 'Акакий', lastMessage: 'Что как, изи'},
       {id: 'bear', name: 'Бурый', lastMessage: 'Привет'},
       {id: 'king', name: 'Кагияма Тобио', lastMessage: 'Мог сыграть лучше'},
-      {id: 'sun', name: 'Хината Шоё', lastMessage: 'Спасибо'}
+      {id: 'sun', name: 'Хината Шоё', lastMessage: 'Спасибо'},
     ],
     postData: [
       {id: 1337, message: 'Hey this is post, really?'},

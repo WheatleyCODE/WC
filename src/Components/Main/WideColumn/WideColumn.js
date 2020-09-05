@@ -3,11 +3,7 @@ import s from './WideColumn.module.css';
 import Post from './Post/Post'
 
 function WideColumn(props) {
-  console.log('**************')
-  console.log(props.store)
-  console.log(props.store.state.newPostText)
-
-
+ 
   let newPostElement = React.createRef();
 
   function onChangefn() {
