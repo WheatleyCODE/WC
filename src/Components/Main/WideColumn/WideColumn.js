@@ -1,8 +1,8 @@
 import React from 'react';
 import s from './WideColumn.module.css';
 import Post from './Post/Post'
-import { addNewTextPostActionCreator } from '../../../Redux/PostReducer';
-import { addPostActionCreator } from '../../../Redux/DialogsReducer';
+import { addNewTextPostActionCreator } from '../../../Redux/AddNewTextPostReducer';
+import { addPostActionCreator } from '../../../Redux/AddPostReducer';
 
 function WideColumn(props) {
 

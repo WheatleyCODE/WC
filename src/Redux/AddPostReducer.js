@@ -2,7 +2,7 @@ const ADD_POST = 'ADD-POST'
 
 export const addPostActionCreator = () => ({type: ADD_POST})
 
-const dialogsReducer = (state, action) => {
+const addPostReducer = (state, action) => {
     if (action.type === ADD_POST) {
         
         let arr = state.postData
@@ -18,4 +18,4 @@ const dialogsReducer = (state, action) => {
 return state
 }
 
-export default dialogsReducer
+export default addPostReducer

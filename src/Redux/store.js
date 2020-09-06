@@ -6,8 +6,8 @@
 // store.js <----- Система управления <----> components
 // store.js -----------------------------------↑
 
-import dialogsReducer from "./DialogsReducer"
-import postReducer from "./PostReducer"
+import addNewTextPostReducer from "./AddPostReducer"
+import addPostReducer from "./AddNewTextPostReducer"
 
 let store = {
 
@@ -46,8 +46,8 @@ let store = {
 
   dispatch(action) {
 
-      store.state = dialogsReducer(store.state, action)
-      store.state = postReducer(store.state, action)
+      this.state = addNewTextPostReducer(this.state, action)
+      this.state = addPostReducer(this.state, action)
       this.rerenderEnTree(store)
 
   }
