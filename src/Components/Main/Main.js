@@ -20,7 +20,6 @@ import Groups from '../Groups/Groups';
 import GroupsMenu from '../Groups/GroupsMenu/GroupsMenu';
 
 function Main(props) {
-
   return (
     <BrowserRouter>
       <div className={s.main_div}>

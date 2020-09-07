@@ -5,7 +5,7 @@ import Dialog from './Dialog/Dialog';
 
 function Dialogs(props) {
   
-  let dialogElem = props.store.state.dialogsData.map((obj) => {
+  let dialogElem = props.store.state.dialogsData.dialogs.map((obj) => {
     return <Dialog lastMessage={obj.lastMessage} name={obj.name} id={obj.id} />
   })
   

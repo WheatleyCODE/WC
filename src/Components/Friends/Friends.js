@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 function Friends(props) {
 
-  let renderFriend = props.store.state.friendData.map((obj) => {
+  let renderFriend = props.store.state.friendsData.friends.map((obj) => {
     return <Friend id={obj.id} name={obj.name}/>
   })
 
