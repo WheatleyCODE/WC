@@ -6,7 +6,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-export function rerenderEnTree (store) {
+export function renderEnTree (store) {
   ReactDOM.render(
   <React.StrictMode>
   <App store={store}/>
@@ -19,8 +19,8 @@ export function rerenderEnTree (store) {
 
 
 
-rerenderEnTree(store)
-store.renderTree(rerenderEnTree)
+renderEnTree(store)
+store.subscribe(renderEnTree)
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

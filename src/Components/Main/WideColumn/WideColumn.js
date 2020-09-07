@@ -18,7 +18,6 @@ function WideColumn(props) {
   function printPost() {
     props.store.dispatch( addPostActionCreator() )
   }
-
   let posts = props.store.getState().profileData.posts.map(obj => <Post message={obj.message} id={obj.id} />)
   
   return (

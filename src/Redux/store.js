@@ -7,14 +7,18 @@
 // store.js -----------------------------------↑
 
 import profileReducer from "./ProfileReducer"
+import dialogsReducer from "./DialogsReducer"
+import friendsReducer from "./FriendsReducer"
+
+
 
 let store = {
 
-  rerenderEnTree() {
+  _callSubscriber () {
     console.log('Патерн')
   },
-  renderTree(fn) {
-    this.rerenderEnTree = fn
+  subscribe(fn) {
+    this._callSubscriber  = fn
   },
 
   getState() {
@@ -55,11 +59,12 @@ let store = {
 
   dispatch(action) {
 
-      this._state = profileReducer(this._state, action)
-      this.rerenderEnTree(store)
+      this._state.dialogsData = dialogsReducer(this._state.dialogsData, action)
+      this._state.friendsData = friendsReducer(this._state.friendsData, action)
+      this._state.profileData = profileReducer(this._state.profileData, action)
+      this._callSubscriber(store)
 
   }
 }
-
 
 export default store
