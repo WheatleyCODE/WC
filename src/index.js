@@ -5,13 +5,16 @@ import store from './Redux/ReduxStore';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { Provider } from 'react-redux';
 
 export function renderEnTree (store) {
   ReactDOM.render(
-  <React.StrictMode>
-  <App store={store}/>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Provider store={store}>
+          <App store={store} />
+        </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
   );
 }
 

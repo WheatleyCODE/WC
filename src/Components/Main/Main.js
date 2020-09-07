@@ -18,6 +18,25 @@ import Clips from '../Clips/Clips';
 import ClipsMenu from '../Clips/ClipsMenu/ClipsMenu';
 import Groups from '../Groups/Groups';
 import GroupsMenu from '../Groups/GroupsMenu/GroupsMenu';
+import { connect } from 'react-redux';
+
+
+// Создаём кантейнер <ClipsConteiner> </ClipsConteiner>
+let mapStateToProps = (state) => {
+ return {
+    dialogsData:state.dialogsData.dialogs
+ }
+}
+let mapDispatchToProps = (dispatch) => {
+  return {
+   nameFunc:  () => {
+     console.log('функция')
+   }
+ }
+}
+const ClipsConteiner = connect (mapStateToProps, mapDispatchToProps) (Clips)
+//Которой нужно обвернуть нужную компоненту = Dialog
+
 
 function Main(props) {
   return (
@@ -45,7 +64,7 @@ function Main(props) {
         <Route path='/video' component={Video} />
         <Route path='/game' component={Games} />
         
-        <Route path='/clips' component={Clips} />
+        <ClipsConteiner><Route path='/clips' component={Clips} /></ClipsConteiner>
         <Route path='/clips' component={ClipsMenu} />
 
       </div>

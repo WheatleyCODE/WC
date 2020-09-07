@@ -23,11 +23,9 @@ function WideColumn(props) {
   return (
       <div className={s.wide_column}>
         <div className={s.info_block}>
-          Сделать нормальную систему данных <br></br>
-          Для каждой страницы свой объект и всё в нём <br></br>
-          И для каждой страницы свой редьюсер<br></br>
-          Переделать всё <br></br>
-          Точнее сделать сразу всё нормально<br></br>
+          Очистить финальные компоненты от лишних данных 43<br></br>
+          Что бы компонента получала только те данные которые ей нужны<br></br>
+          Когда будет видно конечный результат<br></br>
         </div>
         <div className={s.photo_block}></div>
         <div className={s.news_block}>

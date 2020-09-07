@@ -3,7 +3,6 @@ import s from './Dialog.module.css';
 import { NavLink } from 'react-router-dom';
 
 function Dialog(props) {
-
   function alertId() {
     alert(props.id)
   }

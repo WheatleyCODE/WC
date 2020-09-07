@@ -2,7 +2,6 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import Dialog from './Dialog/Dialog';
 
-
 function Dialogs(props) {
   
   let dialogElem = props.store.getState().dialogsData.dialogs.map((obj) => {
