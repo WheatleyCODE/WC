@@ -6,7 +6,15 @@ export const addNewTextPostActionCreator = (text) => {
   }
 export const addPostActionCreator = () => ({type: ADD_POST})
 
-const profileReducer = (state, action) => {
+let initialState = {
+    posts: [
+      {id: 1337, message: 'Hey this is post, really?'},
+      {id: 1338, message: 'Новый старый пост'},
+    ],
+    newPostText: '',
+  } 
+
+const profileReducer = (state = initialState, action) => {
     if (action.type === ADD_POST) {
         
         let arr = state.posts

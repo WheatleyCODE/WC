@@ -1,12 +1,19 @@
 import profileReducer from "./ProfileReducer";
+import friendsReducer from "./FriendsReducer";
+import dialogsReducer from "./DialogsReducer";
+
 
 
 const { createStore, combineReducers } = require("redux");
 
-f
+
 let reducers = combineReducers({
-    profileReducer: profileReducer,
+    profileData: profileReducer,
+    friendsData: friendsReducer,
+    dialogsData: dialogsReducer
 })
-let store = createStore()
+let store = createStore(reducers)
+
+window.st = store
 
 export default store
