@@ -19,7 +19,7 @@ function WideColumn(props) {
     props.store.dispatch( addPostActionCreator() )
   }
 
-  let posts = props.store.state.profileData.posts.map(obj => <Post message={obj.message} id={obj.id} />)
+  let posts = props.store.getState().profileData.posts.map(obj => <Post message={obj.message} id={obj.id} />)
   
   return (
       <div className={s.wide_column}>
@@ -32,7 +32,7 @@ function WideColumn(props) {
         </div>
         <div className={s.photo_block}></div>
         <div className={s.news_block}>
-          <textarea onChange={onChangefn} value={props.store.state.newPostText} ref={newPostElement}></textarea>
+          <textarea onChange={onChangefn} value={props.store.getState().profileData.newPostText} ref={newPostElement}></textarea>
           <button onClick={printPost} >Опубликовать</button>
           
         </div>

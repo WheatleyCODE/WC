@@ -17,7 +17,11 @@ let store = {
     this.rerenderEnTree = fn
   },
 
-  state: {
+  getState() {
+    return this._state
+  },
+
+  _state: {
     dialogsData: {
       dialogs: [
         {id: 'qb_wht', name: 'Дмитрий Wheatley', lastMessage: 'Го строить мост? Братанy'},
@@ -51,7 +55,7 @@ let store = {
 
   dispatch(action) {
 
-      this.state = addPostReducer(this.state, action)
+      this._state = addPostReducer(this._state, action)
       this.rerenderEnTree(store)
 
   }

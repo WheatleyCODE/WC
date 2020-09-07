@@ -7,7 +7,6 @@ export const addNewTextPostActionCreator = (text) => {
 export const addPostActionCreator = () => ({type: ADD_POST})
 
 const addPostReducer = (state, action) => {
-    debugger
     if (action.type === ADD_POST) {
         
         let arr = state.profileData.posts
