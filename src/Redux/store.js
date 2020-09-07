@@ -6,7 +6,7 @@
 // store.js <----- Система управления <----> components
 // store.js -----------------------------------↑
 
-import addPostReducer from "./AddPostReducer"
+import profileReducer from "./ProfileReducer"
 
 let store = {
 
@@ -55,7 +55,7 @@ let store = {
 
   dispatch(action) {
 
-      this._state = addPostReducer(this._state, action)
+      this._state = profileReducer(this._state, action)
       this.rerenderEnTree(store)
 
   }
