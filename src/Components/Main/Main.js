@@ -35,7 +35,7 @@ let mapDispatchToProps = (dispatch) => {
  }
 }
 const ClipsConteiner = connect (mapStateToProps, mapDispatchToProps) (Clips)
-//Которой нужно обвернуть нужную компоненту = Dialog
+//Которая отрисует нужную компоненту(Clips) в обертке (ClipsConteiner)
 
 
 function Main(props) {
@@ -64,7 +64,7 @@ function Main(props) {
         <Route path='/video' component={Video} />
         <Route path='/game' component={Games} />
         
-        <ClipsConteiner><Route path='/clips' component={Clips} /></ClipsConteiner>
+        <Route path='/clips' render={ () => <ClipsConteiner></ClipsConteiner>} />
         <Route path='/clips' component={ClipsMenu} />
 
       </div>
