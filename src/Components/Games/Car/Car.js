@@ -1,14 +1,51 @@
 import React from 'react'
 import s from './Car.module.scss'
-import Radium from 'radium'
+// import Radium from 'radium'
 
 
-class Car extends React.Component {
+class Car extends React.Component { //Стайт фулл компонент наследуется от реакт компонент
 
-  // constructor(props) {
-  //   super(props)
+  // componentWillReceiveProps(nextProps) {
+  //   console.log('Car componentWillReceiveProps', nextProps)
   // }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    // Можно сделать ппроверку и проверить нужно ли перерисовывать элемент
+    // Оптимизирует приложение
+    console.log('Car shouldComponentUpdate', nextProps, nextState)
+    return nextProps.name.trim() !== this.props.name.trim()
+  }
+
+  // // componentWillUpdate(nextProps, nextState) {
+  //   console.log('Car componentWillUpdate', nextProps, nextState)
+  // }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    // Можно использовать для синхронизации с локальным стейтом
+    console.log('Car getDerivedStateFromProps', nextProps, prevState )
+
+    return prevState
+  }
+
+  componentDidUpdate() {
+    console.log('Car componentDidUpdate')
+  }
+
+  getSnapshotBeforeUpdate() {
+    // Доступ к дом дереву до обновления стейта
+    console.log('Car getSnapshotBeforeUpdate')
+  }
+
+  componentWillUnmount() {
+    // Когда разрушается (Удаляется из дом дерева)
+    console.log('Car componentWillUnmount')
+  }
+
   render() {
+    if(Math.random > 0.7) {
+      throw new Error('Car ranndom')
+    }
+    console.log('Car render')
     let arrClases = []
     if (this.props.name.length > 4) {
       arrClases.push(s.green)
@@ -41,4 +78,4 @@ class Car extends React.Component {
 // let Car = ({name, year, onChangeTitle, onChangeBrend, onClickDelete}) => {
 // }
  
-export default Radium(Car)
+export default Car

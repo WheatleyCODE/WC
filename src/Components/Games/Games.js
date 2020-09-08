@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import s from './Games.module.css';
 import Car from './Car/Car'
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+
 
 class Games extends Component {
 
@@ -65,14 +67,16 @@ class Games extends Component {
     let cars = this.state.cars.map( (elem, index) => {
       if (this.state.showCars) {
         return (
-          <Car
-              key={index} // Уникальный ключ для реакта
+          <ErrorBoundary  key={index}>
+            <Car
+              // Уникальный ключ для реакта
               name={elem.name}
               year={elem.year}
               onChangeTitle={this.changeTitleHandler.bind(this, elem.name)}
-              onChangeBrend= { (event) => {this.onChangeBrend(event.target.value, index)}}
-              onClickDelete = { () => {this.onClickDelete(index)}}
+              onChangeBrend={(event) => { this.onChangeBrend(event.target.value, index) }}
+              onClickDelete={() => { this.onClickDelete(index) }}
             />
+          </ErrorBoundary>
         )
       } return null
     })
