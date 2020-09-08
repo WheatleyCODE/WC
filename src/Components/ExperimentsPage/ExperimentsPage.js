@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import s from './Games.module.css';
+import s from './ExperimentsPage.module.css';
 import Car from './Car/Car'
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 
-class Games extends Component {
+class ExperimentsPage extends Component {
 
   constructor(props) {
     console.log('constructor')
@@ -98,4 +98,4 @@ class Games extends Component {
   }
 }
 
-export default Games;
+export default ExperimentsPage;

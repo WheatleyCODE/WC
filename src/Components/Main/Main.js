@@ -13,7 +13,7 @@ import FriendsMenu from '../Friends/FriendsMenu/FriendsMenu';
 import Photos from '../Photos/Photos';
 import Music from '../Music/Music';
 import Video from '../Video/Video';
-import Games from '../Games/Games';
+import ExperimentsPage from '../ExperimentsPage/ExperimentsPage';
 import Clips from '../Clips/Clips';
 import ClipsMenu from '../Clips/ClipsMenu/ClipsMenu';
 import Groups from '../Groups/Groups';
@@ -62,7 +62,7 @@ function Main(props) {
 
         <Route path='/music' component={Music} />
         <Route path='/video' component={Video} />
-        <Route path='/game' component={Games} />
+        <Route path='/experiments' component={ExperimentsPage} />
         
         <Route path='/clips' render={ () => <ClipsConteiner></ClipsConteiner>} />
         <Route path='/clips' component={ClipsMenu} />
