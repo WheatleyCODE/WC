@@ -1,0 +1,14 @@
+$borderStyle: 2px solid rgb(3, 122, 9);
+.car {
+    border-radius: 10px;
+    width: 400px;
+    padding: 20px;
+    margin: 20px auto;
+    transition: border, box-shadow .3s;
+}
+input {
+    outline: none;
+}
+.green {
+    border: $borderStyle;
+}
