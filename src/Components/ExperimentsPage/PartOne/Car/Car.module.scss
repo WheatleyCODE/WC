@@ -6,9 +6,6 @@ $borderStyle: 2px solid rgb(3, 122, 9);
     margin: 20px auto;
     transition: border, box-shadow .3s;
 }
-input {
-    outline: none;
-}
 .green {
     border: $borderStyle;
 }
