@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './ExperimentsPage.module.scss'
 import PartOne from './PartOne/PartOne'
+import PartTwo from './PartTwo/PartTwo'
 
 class ExperimentsPage extends React.Component {
 
@@ -13,18 +14,16 @@ class ExperimentsPage extends React.Component {
         this.setState({
             showPartOne: !this.state.showPartOne
           })
-        console.log(this.state)
     }
     PrintPartTwo = () =>{
         this.setState({
             showPartTwo: !this.state.showPartTwo
           })
-        console.log(this.state)
     }
     render() {
 
         let partOne = (this.state.showPartOne) ? <PartOne /> : undefined
-        let partTwo = (this.state.showPartTwo) ? <PartOne /> : undefined
+        let partTwo = (this.state.showPartTwo) ? <PartTwo /> : undefined
            
 
         return(
