@@ -1,0 +1,36 @@
+.ulDrawer li {
+    list-style-type: none;
+    text-align: left;
+    font-size: 30px;
+    padding: 5px;
+    color: white;
+}
+.ulDrawer {
+    position: absolute;
+}
+.ulDrawer li:hover {
+    cursor: pointer;
+    color: rgb(219, 219, 219);
+}
+.navMain {
+    position: relative;
+    z-index: 100;
+    width: 320px;
+    height: 400px;
+    background-color: rgb(76, 151, 250);
+    border-right: 30px solid  rgb(68, 136, 224);
+    transition: 0.22s;
+    opacity: 0;
+    animation: show 0.22s 1; 
+    animation-fill-mode: forwards; 
+    animation-delay: 0.22s; 
+}
+
+@keyframes show{
+    0%{
+    opacity:0;
+    }
+    100% {
+    opacity:1;
+    }
+    }
