@@ -14,7 +14,8 @@ function SideBar() {
         <NavLink className={s.navLink} to='/music' activeClassName={s.active}><li><i className="fa fa-music" aria-hidden="true"></i><span>Музыка</span></li></NavLink>
         <NavLink className={s.navLink} to='/video' activeClassName={s.active}><li><i className="fa fa-video-camera" aria-hidden="true"></i><span>Видео</span></li></NavLink>
         <NavLink className={s.navLink} to='/clips' activeClassName={s.active}><li><i className="fa fa-film" aria-hidden="true"></i><span>Клипы</span></li></NavLink>
-        <NavLink className={s.navLink} to='/experiments' activeClassName={s.active}><li><i className="fa fa-gamepad" aria-hidden="true"></i><span>Experiments</span></li></NavLink>
+        <NavLink className={s.navLink} to='/experiments' activeClassName={s.active}><li><span>Experiments</span></li></NavLink>
+        <NavLink className={s.navLink} to='/games' activeClassName={s.active}><li><i className="fa fa-gamepad" aria-hidden="true"></i><span>Игры</span></li></NavLink>
         <hr></hr>
         <NavLink className={s.navLink} to='/pay' activeClassName={s.active}><li><i className="fa fa-usd" aria-hidden="true"></i><span>VK Pay</span></li></NavLink>
         <NavLink className={s.navLink} to='/work' activeClassName={s.active}><li><i className="fa fa-briefcase" aria-hidden="true"></i><span>Работа</span></li></NavLink>

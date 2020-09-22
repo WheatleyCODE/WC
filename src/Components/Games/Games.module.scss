@@ -1,0 +1,37 @@
+.gamesMain {
+  width: 796px;
+  margin:55px 15px;
+}
+.games {
+  width: 796px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
+  margin-bottom: 30px;
+}
+.gamesCatalog {
+  width: 796px;
+  height: 310px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
+  margin-bottom: 30px;
+}
+.gamesLine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gameContainer {
+  width: 140px;
+  height: 180px;
+  margin: 8px;
+  border: 1PX solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.gameContainer img {
+  width: 140px;
+  border-radius: 10px;
+}

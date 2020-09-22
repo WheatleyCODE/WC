@@ -21,6 +21,8 @@ import GroupsMenu from '../Groups/GroupsMenu/GroupsMenu';
 import { connect } from 'react-redux';
 import Authorization from '../Authorization/Authorization'
 import TestBlock from './TestBlock/TestBlock'
+import Games from '../Games/Games';
+import Daggers from '../Games/Daggers/Daggers';
 
 
 // Создаём кантейнер <ClipsConteiner> </ClipsConteiner>
@@ -63,13 +65,16 @@ function Main(props) {
         <Route path='/friends' component={FriendsMenu} />
 
         <Route path='/photos' component={Photos} />
-
+      
         <Route path='/music' component={Music} />
         <Route path='/video' component={Video} />
         <Route path='/experiments' component={ExperimentsPage} />
         
         <Route path='/clips' render={ () => <ClipsConteiner></ClipsConteiner>} />
         <Route path='/clips' component={ClipsMenu} />
+
+        <Route path='/games' component={Games} />
+        <Route path='/daggers' component={Daggers}/>
 
         {/* Обработка страницы 404 */}
         {/* Так же ещё есть редирект */}
