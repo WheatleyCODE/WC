@@ -65,3 +65,14 @@
   margin-left:60px ;
   margin-right:0px;
 }
+.navLink {
+  display: block;
+  width: 140px;
+  height: 43px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

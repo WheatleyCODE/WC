@@ -5,7 +5,7 @@ import NarrowColumnWrap from './NarrowColumnWrap/NarrowColumnWrap'
 import WideColumn from './WideColumn/WideColumn'
 import Dialogs from '../Dialogs/Dialogs'
 import DialogsMenu from '../Dialogs/DialogsMenu/DialogsMenu'
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import News from '../News/News';
 import NewsMenu from '../News/NewsMenu/NewsMenu';
 import Friends from '../Friends/Friends';
@@ -19,9 +19,8 @@ import ClipsMenu from '../Clips/ClipsMenu/ClipsMenu';
 import Groups from '../Groups/Groups';
 import GroupsMenu from '../Groups/GroupsMenu/GroupsMenu';
 import { connect } from 'react-redux';
-
+import Authorization from '../Authorization/Authorization'
 import TestBlock from './TestBlock/TestBlock'
-
 
 
 // Создаём кантейнер <ClipsConteiner> </ClipsConteiner>
@@ -43,10 +42,10 @@ const ClipsConteiner = connect (mapStateToProps, mapDispatchToProps) (Clips)
 
 function Main(props) {
   return (
-    <BrowserRouter>
       <div className={s.main_div}>
         <SideBar />
         {/* <Switch> */}
+        <Route path='/authorization' component={Authorization} />
         <Route path='/' exact component={TestBlock} />
         <Route path='/profile' component={NarrowColumnWrap} />
         <Route path='/profile' render={ () => <WideColumn store = {props.store} />} />
@@ -77,7 +76,6 @@ function Main(props) {
         {/* <Route Redirect render={ () => <h1 style={ {color:'red', marginTop:'200px', textAlign: 'center', }}>Ошибка 404</h1>} />
         </Switch> */}
       </div>
-    </BrowserRouter>
   )
 }
 export default Main;

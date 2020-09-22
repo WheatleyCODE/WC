@@ -6,11 +6,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 export function renderEnTree (store) {
   ReactDOM.render(
         <Provider store={store}>
-          <App store={store} />
+          <BrowserRouter>
+            <App store={store} />
+          </BrowserRouter>
         </Provider>,
     document.getElementById('root')
   );

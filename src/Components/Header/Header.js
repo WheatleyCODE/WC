@@ -1,5 +1,8 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import s from './Header.module.css';
+
+
 
 function Header() {
   return (
@@ -13,7 +16,7 @@ function Header() {
         </div>
         <div className={s.noti}><i className="fa fa-bell" aria-hidden="true"></i></div>
         <div className={s.music}>music</div>
-        <div className={s.logIn}>logIn</div>
+        <div className={s.logIn}><div className={s.AuthorizationMain}><NavLink className={s.navLink} to='/authorization'><span>Войти</span></NavLink></div></div>
       </div>
     </header>
   );
