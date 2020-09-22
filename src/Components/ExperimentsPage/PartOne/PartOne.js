@@ -59,6 +59,7 @@ class ExperimentsPage extends Component {
     console.log('Games componentDidMount')
   }
   render() {
+    console.log(this.props)
     const divStyle = {
       textAlign: 'center'
     }

@@ -17,6 +17,7 @@ class Car extends React.Component { //Стэйт фулл компонент н�
     // if (Math.random() > 0.7) {
     //   throw new Error('Car ranndom')
     // }
+
     console.log('Car render')
     let arrClases = []
     if (this.props.name.length > 4) {

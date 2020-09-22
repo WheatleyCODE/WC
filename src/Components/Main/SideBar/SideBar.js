@@ -27,6 +27,15 @@ function SideBar() {
         <NavLink className={s.navLink} to='/virus' activeClassName={s.active}><li><i className="fa fa-asterisk" aria-hidden="true"></i><span>Коронавирус</span></li></NavLink>
         <hr></hr>
         <NavLink className={s.navLink} to='/like' activeClassName={s.active}><li><i className="fa fa-hashtag" aria-hidden="true"></i><span>Популярное</span></li></NavLink>
+
+
+        <NavLink className={s.navLink} to='/' activeClassName={s.active}><li><i className="fa fa-hashtag" aria-hidden="true"></i><span>TestBlock</span></li></NavLink>
+        <NavLink className={s.navLink} to={ {
+          // Параметры ссылки
+          pathname: '/',
+          search: '?a=1b=2',
+          hash: 'wfm-hash',
+        }} activeClassName={s.active}><li><i className="fa fa-hashtag" aria-hidden="true"></i><span>TestBlockGet</span></li></NavLink>
       </nav>
       <div className={s.aside_block}>
         <div className={s.advertising}>Реклама</div><hr />
