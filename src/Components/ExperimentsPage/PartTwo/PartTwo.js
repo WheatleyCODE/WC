@@ -5,14 +5,16 @@ import Quiz from './Quiz/Quiz'
 
 class PartTwo extends React.Component {
 
-    state = {
-        quiz: '',
+    renderQuiz = () => {
+        this.setState({
+          quiz: <Quiz />,
+          button: ''
+        })  
     }
 
-    renderQuiz = () => {
-      this.setState({
-        quiz: <Quiz />
-      })  
+    state = {
+        quiz: '',
+        button: <button className={s.startButton} onClick={this.renderQuiz}>НАЧАТЬ</button>,
     }
 
     render() {
@@ -20,7 +22,7 @@ class PartTwo extends React.Component {
             <div className={s.partTwoMain}>
                 <Layout>
                     {this.state.quiz}
-                    <button onClick={this.renderQuiz}>Показать векторину</button>
+                    {this.state.button}
                 </Layout>
             </div>
         )

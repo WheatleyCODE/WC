@@ -5,7 +5,7 @@
     text-align: left;
 }
 
-.ulMain li a {
+.ulMain li span {
     display: block;
     width: 300px;
     border: 1px solid rgb(133, 133, 133);
@@ -14,10 +14,31 @@
     color: #000;
     text-decoration: none;
 }
-.ulMain li a:hover {
+.ulMain li span:hover {
     border: 1px solid rgb(0, 0, 0);
+    cursor: pointer;
 }
 
 .ulMain li:hover {
     list-style-type: upper-alpha;
+}
+.trueAnsver {
+    margin: 10px;
+    padding: 10px;
+    border-bottom: 1px solid black;
+    text-align: left;
+    display: flex;
+}
+.calcAnsver {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.icon {
+    width: 30px;
+}
+.colorRed {
+    color: rgb(200, 0, 0);
+}
+.colorGreen {
+    color: rgb(25, 190, 47);
 }

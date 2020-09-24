@@ -5,7 +5,7 @@ import AnswersList from './AnswerList/AnswerList'
 const ActiveQuiz = props => {
     return(
         <div className={s.activeQuizMain}>
-            <AnswersList question={props.question} />
+            <AnswersList calcTrueAnsver={props.calcTrueAnsver} ansverClick={props.ansverClick} activeQU={props.activeQU} question={props.question} />
         </div>
     )
 } 
