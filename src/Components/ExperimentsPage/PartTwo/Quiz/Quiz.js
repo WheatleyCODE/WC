@@ -14,6 +14,7 @@ class Quiz extends React.Component {
                 question: 'Какого цвета небо?',
                 trueAnsver: 0,
                 right: false,
+                click: false,
             },
             {
                 idQuest: 2,
@@ -21,16 +22,32 @@ class Quiz extends React.Component {
                 question: 'Как считать возраст котов?',
                 trueAnsver: 2,
                 right: false,
+                click: false,
             },
             {
                 idQuest: 3,
                 answers: ['путэн', 'Путин', 'путен', 'патин'],
-                question: 'Лучший президент?',
+                question: 'Лучший президент России и всего мира?',
                 trueAnsver: 1,
                 right: false,
+                click: false,
             },
+            
         ],
     }
+
+    resultClick = (index) => {
+    
+        console.log('dsds', index)
+        let NewQuiz = this.state.quizes
+        NewQuiz[index].click = !this.state.quizes[index].click
+        this.setState({
+            quizes: NewQuiz
+        })
+
+
+    }
+
 
     ansverClick = (indexAnsver) => {
 
@@ -60,10 +77,10 @@ class Quiz extends React.Component {
         let activeQuest = this.state.activeQU < this.state.quizes.length ? this.state.activeQU + 1 : this.state.activeQU
         return(
             <div className={s.quizMain}>
-                <h2 className={s.h2}>Ответьте на вопросы</h2>
+                <h2 className={s.h2}>Викторина Wheatley</h2>
                 <div className={s.width}>
                     <span className={s.counter}>{activeQuest} из {this.state.quizes.length}</span>
-                    <ActiveQuiz calcTrueAnsver={this.state.calcTrueAnsver} ansverClick={this.ansverClick} activeQU={this.state.activeQU} question={this.state.quizes}/>
+                    <ActiveQuiz resultClick={this.resultClick} calcTrueAnsver={this.state.calcTrueAnsver} ansverClick={this.ansverClick} activeQU={this.state.activeQU} question={this.state.quizes}/>
                 </div>
             </div>
         )

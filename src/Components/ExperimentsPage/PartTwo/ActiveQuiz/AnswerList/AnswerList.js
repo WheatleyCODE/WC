@@ -5,7 +5,7 @@ function AnswersList(props) {
 
     let questId = props.question[props.activeQU]
 
-    if(questId) {
+    if (questId) {
         return (
             <>
                 <p>
@@ -15,31 +15,47 @@ function AnswersList(props) {
                     </span>
                 </p>
                 <ul className={s.ulMain}>
-                {questId.answers.map((ansver, index) => {
-                    return <li onClick={() => {props.ansverClick(index)}} key={index}><span>{ansver}</span></li>
-                })}
-            </ul>
+                    {questId.answers.map((ansver, index) => {
+                        return <li onClick={() => { props.ansverClick(index) }} key={index}><span>{ansver}</span></li>
+                    })}
+                </ul>
             </>
         )
     } else {
         console.log(props.question)
         const questAnsver = props.question.map((obj, index) => {
+            
+            let ansverListLiner = obj.answers.map((elem, nun) => {
+                let trueLiClass = obj.trueAnsver === nun? s.liTrueAnver : s.liFalseAnver
+                return <li className={trueLiClass} key={nun + 'list'}>{elem}</li>
+            })
+
+            let ansverList = obj.click? <div className={s.divUl}>
+                <ul className={s.ulAnsver}>
+                    {ansverListLiner}
+                </ul>
+            </div> : ''
+
             let ansver = obj.right ? <span className={s.colorGreen}><i className="fa fa-check" aria-hidden="true"></i></span>
-             : <span className={s.colorRed}><i className="fa fa-times" aria-hidden="true"></i></span>
-            return <div className={s.trueAnsver} key={index + 'hey'}>
+                : <span className={s.colorRed}><i className="fa fa-times" aria-hidden="true"></i></span>
+                
+            return <div onClick={() => { props.resultClick(index) }} className={s.flexDiv}>
                 <div className={s.icon}>{ansver}</div>
-                {obj.question}
+                <div className={s.trueAnsver} key={index + 'hey'}>
+                    <span>{obj.question}</span>
+                    {ansverList}
+                </div>
             </div>
         })
         return (
-        <div>
-            <div className={s.calcAnsver}>
-                Всего правильных ответов: <strong>{props.calcTrueAnsver}</strong>
-            </div>
             <div>
-                {questAnsver}
+                <div className={s.calcAnsver}>
+                    Всего правильных ответов: <strong>{props.calcTrueAnsver}</strong>
+                </div>
+                <div>
+                    {questAnsver}
+                </div>
             </div>
-        </div>
         )
     }
 

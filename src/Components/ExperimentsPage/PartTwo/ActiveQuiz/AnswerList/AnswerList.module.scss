@@ -4,7 +4,9 @@
     height: 35px;
     text-align: left;
 }
-
+p {
+    padding: 0px 20px;
+}
 .ulMain li span {
     display: block;
     width: 300px;
@@ -25,9 +27,7 @@
 .trueAnsver {
     margin: 10px;
     padding: 10px;
-    border-bottom: 1px solid black;
     text-align: left;
-    display: flex;
 }
 .calcAnsver {
     margin-bottom: 10px;
@@ -35,10 +35,31 @@
 }
 .icon {
     width: 30px;
+    padding-top: 20px ;
 }
 .colorRed {
     color: rgb(200, 0, 0);
 }
 .colorGreen {
     color: rgb(25, 190, 47);
+}
+.flexDiv {
+    display: flex;
+    border-bottom: 1px solid black;
+    padding: 0px 20px;
+}
+.flexDiv:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.041);
+}
+.ulAnsver {
+    list-style-type: none;
+    margin: 0;
+    margin-top: 15px;
+}
+.ulAnsver li {
+    padding: 2px;
+}
+.liTrueAnver {
+    list-style-type: square;
 }
