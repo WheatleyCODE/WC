@@ -2,6 +2,7 @@ import React from 'react'
 import s from './PartTwo.module.scss'
 import Layout from './hoc/Layout/Layout'
 import Quiz from './Quiz/Quiz'
+import QuizCreator from './QuizCreator/QuizCreator'
 
 class PartTwo extends React.Component {
 
@@ -24,6 +25,7 @@ class PartTwo extends React.Component {
                     {this.state.quiz}
                     {this.state.button}
                 </Layout>
+                <QuizCreator/>
             </div>
         )
     }
