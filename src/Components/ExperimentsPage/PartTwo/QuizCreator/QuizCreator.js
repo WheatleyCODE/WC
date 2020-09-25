@@ -3,6 +3,7 @@ import s from './QuizCreator.module.scss'
 import Input from '../../../UI/Input/Input'
 import {createControl, validate, validateForm} from '../../../Form/FormFraemwork'
 import Select from '../../../UI/Select/Select'
+import axios from 'axios'
 
 function createControlOptional(number) {
     return createControl({
@@ -30,7 +31,7 @@ export default class QuizCreator extends React.Component {
     state = {
         quiz: [],
         isFormValid: false,
-        rightAnswerId: 1,
+        trueAnsver: 0,
         formControls: createFormControls()
     }
 
@@ -47,13 +48,12 @@ export default class QuizCreator extends React.Component {
 
       const questionItem = {
           question: question.value,
-          id: index,
-          rightAnswerId: this.state.rightAnswerId,
-          answer: [
-              {text: option1.value, id: option1.id},
-              {text: option2.value, id: option2.id},
-              {text: option3.value, id: option3.id},
-              {text: option4.value, id: option4.id}
+          idQuest: index,
+          trueAnsver: this.state.trueAnsver,
+          right: false,
+          click: false,
+          answers: [
+            option1.value, option2.value, option3.value, option4.value
           ]
       }
       quiz.push(questionItem)
@@ -61,15 +61,35 @@ export default class QuizCreator extends React.Component {
       this.setState({
           quiz,
           isFormValid: false,
-          rightAnswerId: 1,
+          trueAnsver: 0,
           formControls: createFormControls()
       })
     }
 
-    createQuizHandler = (event) => {
+    createQuizHandler = async (event) => {
         event.preventDefault()
 
-        console.log(this.state.quiz)
+        try {
+            const response = await axios.post('https://reactfire-9a16f.firebaseio.com/quizes.json', this.state.quiz)
+            console.log(response.data)
+
+            this.setState({
+                quiz: [],
+                isFormValid: false,
+                trueAnsver: 0,
+                formControls: createFormControls()
+            })
+        } catch (e) {
+            console.log(e)
+        }
+
+        // axios.post('https://reactfire-9a16f.firebaseio.com/quizes.json', this.state.quiz)
+        //     .then( response => {
+        //         console.log(response)
+        //     })
+        //     .catch( err => {
+        //         console.log(err)
+        //     })
     }
      
     changeHandler = (value, controlName) => {
@@ -110,7 +130,7 @@ export default class QuizCreator extends React.Component {
     }
     selectHandler = event => {
        this.setState({
-           rightAnswerId: +event.target.value
+        trueAnsver: +event.target.value
        })
 
     }
@@ -124,13 +144,13 @@ export default class QuizCreator extends React.Component {
                         <hr className={s.hr}/>
                         <Select
                             label="Выберите правильный ответ"
-                            value={this.state.rightAnswerId}
+                            value={this.state.trueAnsver}
                             onChange={this.selectHandler}
                             options={[
-                                { text: 1, value: 1 },
-                                { text: 2, value: 2 },
-                                { text: 3, value: 3 },
-                                { text: 4, value: 4 }
+                                { text: 1, value: 0 },
+                                { text: 2, value: 1 },
+                                { text: 3, value: 2 },
+                                { text: 4, value: 3 }
                             ]}
                         />
                         <button disabled={!this.state.isFormValid} onClick={this.addQuestHandler}>Добавить воппрос</button>

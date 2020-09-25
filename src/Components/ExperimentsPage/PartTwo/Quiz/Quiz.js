@@ -7,33 +7,34 @@ class Quiz extends React.Component {
     state = {
         calcTrueAnsver: 0,
         activeQU : 0,
-        quizes: [
-            {
-                idQuest: 1,
-                answers: ['Голубое', 'Красное', 'Зелёное', 'Розовое'],
-                question: 'Какого цвета небо?',
-                trueAnsver: 0,
-                right: false,
-                click: false,
-            },
-            {
-                idQuest: 2,
-                answers: ['Умножить на 10', 'Умножить на 0', 'Умножить на 7', 'Привет'],
-                question: 'Как считать возраст котов?',
-                trueAnsver: 2,
-                right: false,
-                click: false,
-            },
-            {
-                idQuest: 3,
-                answers: ['путэн', 'Путин', 'путен', 'патин'],
-                question: 'Лучший президент России и всего мира?',
-                trueAnsver: 1,
-                right: false,
-                click: false,
-            },
+        // quizes: [
+        //     {
+        //         idQuest: 1,
+        //         answers: ['Голубое', 'Красное', 'Зелёное', 'Розовое'],
+        //         question: 'Какого цвета небо?',
+        //         trueAnsver: 0,
+        //         right: false,
+        //         click: false,
+        //     },
+        //     {
+        //         idQuest: 2,
+        //         answers: ['Умножить на 10', 'Умножить на 0', 'Умножить на 7', 'Привет'],
+        //         question: 'Как считать возраст котов?',
+        //         trueAnsver: 2,
+        //         right: false,
+        //         click: false,
+        //     },
+        //     {
+        //         idQuest: 3,
+        //         answers: ['путэн', 'Путин', 'путен', 'патин'],
+        //         question: 'Лучший президент России и всего мира?',
+        //         trueAnsver: 1,
+        //         right: false,
+        //         click: false,
+        //     },
             
-        ],
+        // ],
+        quizes: this.props.quiz
     }
 
     resultClick = (index) => {
@@ -74,6 +75,8 @@ class Quiz extends React.Component {
     }
 
     render() {
+
+        console.log(this.state.quizes)
         let activeQuest = this.state.activeQU < this.state.quizes.length ? this.state.activeQU + 1 : this.state.activeQU
         return(
             <div className={s.quizMain}>

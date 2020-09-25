@@ -16,3 +16,14 @@
     cursor: pointer;
     background-color: rgb(223, 223, 223);
 }
+.serverQuiz:hover {
+    cursor: pointer;
+    background-color: #4d4d4d13;
+}
+.serverQuiz {
+    padding: 0px 10px;
+    border-bottom: 1px solid black;
+}
+.serverQuiz:first-child {
+    margin-top: 20px;
+}
