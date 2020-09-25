@@ -38,10 +38,8 @@ let mapDispatchToProps = (dispatch) => {
    }
  }
 }
-const ClipsConteiner = connect (mapStateToProps, mapDispatchToProps) (Clips)
-//Которая отрисует нужную компоненту(Clips) в обертке (ClipsConteiner)
-
-
+const ClipsConteiner = connect(mapStateToProps, mapDispatchToProps) (Clips)
+// Которая отрисует нужную компоненту(Clips) в обертке (ClipsConteiner)
 function Main(props) {
   return (
       <div className={s.main_div}>
