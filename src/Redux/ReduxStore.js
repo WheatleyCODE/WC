@@ -28,7 +28,7 @@ const reducers = combineReducers({
   profileData: profileReducer,
   friendsData: friendsReducer,
   dialogsData: dialogsReducer,
-  ExperimentsCounterData: experimentsPageCounterReducer,
+  experimentsCounterData: experimentsPageCounterReducer,
 })
 
 const store = createStore(reducers, composeEnhancers(applyMiddleware(reduxThunk, loggerMiddleware)))

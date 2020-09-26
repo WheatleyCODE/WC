@@ -41,7 +41,7 @@ const PartFour = (props) => {
 
 function mapStateToProps(state) {
   return {
-    counter: state.ExperimentsCounterData.counter,
+    counter: state.experimentsCounterData.counter,
   }
 }
 
