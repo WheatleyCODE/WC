@@ -25,7 +25,7 @@ export const AddAsyncActionCreator = (value) => (
 
 // Начально значение стейта
 const initialState = {
-  counter: 100,
+  counter: 0,
 }
 
 // Редьюсер изметяющий стор

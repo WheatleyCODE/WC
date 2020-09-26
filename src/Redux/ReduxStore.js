@@ -3,7 +3,26 @@ import profileReducer from './ProfileReducer';
 import friendsReducer from './FriendsReducer';
 import dialogsReducer from './DialogsReducer';
 import experimentsPageCounterReducer from './ExperimentsPageCounterReducer'
-const { createStore, combineReducers, applyMiddleware } = require('redux');
+
+const {
+  createStore,
+  combineReducers,
+  applyMiddleware,
+  compose,
+} = require('redux');
+
+const composeEnhancers =
+  typeof window === 'object' &&
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+      // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+    }) : compose;
+
+const loggerMiddleware = store => next => action => {
+  const result = next(action)
+  console.log('Middleware', store.getState())
+  return result
+}
 
 let reducers = combineReducers({
   profileData: profileReducer,
@@ -12,6 +31,6 @@ let reducers = combineReducers({
   ExperimentsCounterData: experimentsPageCounterReducer,
 })
 
-let store = createStore(reducers, applyMiddleware( reduxThunk ))
+let store = createStore(reducers, composeEnhancers(applyMiddleware( reduxThunk, loggerMiddleware )))
 
 export default store
