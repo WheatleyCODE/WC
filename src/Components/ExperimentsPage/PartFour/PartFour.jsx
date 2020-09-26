@@ -7,6 +7,7 @@ import {
   SubOneActionCreator,
   AddNumberActionCreator,
   SubNumberActionCreator,
+  AddAsyncActionCreator,
 } from '../../../Redux/ExperimentsPageCounterReducer'
 
 class PartFour extends React.Component {
@@ -20,6 +21,7 @@ class PartFour extends React.Component {
       OnSub,
       OnAddNum,
       OnSubNum,
+      OnSyncAdd,
     } = this.props
 
     return (
@@ -34,6 +36,7 @@ class PartFour extends React.Component {
           <div>
             <button onClick={() => { OnAddNum(10) }} type="button">Прибавить 10</button>
             <button onClick={() => { OnSubNum(10) }} type="button">Вычесть 10</button>
+            <button onClick={() => { OnSyncAdd(100) }} type="button">Добавить 100 через 3с</button>
           </div>
         </div>
       </div>
@@ -53,6 +56,7 @@ function mapDispatchToProps(dispatch) {
     OnSub: () => dispatch(SubOneActionCreator()),
     OnAddNum: (num) => dispatch(AddNumberActionCreator(num)),
     OnSubNum: (num) => dispatch(SubNumberActionCreator(num)),
+    OnSyncAdd: (num) => dispatch(AddAsyncActionCreator(num)),
   }
 }
 
@@ -62,6 +66,7 @@ PartFour.propTypes = {
   OnSub: PropTypes.func,
   OnAddNum: PropTypes.func,
   OnSubNum: PropTypes.func,
+  OnSyncAdd: PropTypes.func,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PartFour);

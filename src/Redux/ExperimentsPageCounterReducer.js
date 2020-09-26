@@ -17,6 +17,11 @@ export const AddNumberActionCreator = (value) => (
 export const SubNumberActionCreator = (value) => (
   { type: SUB_NUMBER, value }
 )
+export const AddAsyncActionCreator = (value) => (
+  (dispatch) => {
+    setTimeout(() => dispatch(AddNumberActionCreator(value)), 3000)
+  }
+)
 
 // Начально значение стейта
 const initialState = {

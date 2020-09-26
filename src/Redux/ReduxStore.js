@@ -1,9 +1,9 @@
+import reduxThunk from 'redux-thunk'
 import profileReducer from './ProfileReducer';
 import friendsReducer from './FriendsReducer';
 import dialogsReducer from './DialogsReducer';
 import experimentsPageCounterReducer from './ExperimentsPageCounterReducer'
-
-const { createStore, combineReducers } = require('redux');
+const { createStore, combineReducers, applyMiddleware } = require('redux');
 
 let reducers = combineReducers({
   profileData: profileReducer,
@@ -12,6 +12,6 @@ let reducers = combineReducers({
   ExperimentsCounterData: experimentsPageCounterReducer,
 })
 
-let store = createStore(reducers)
+let store = createStore(reducers, applyMiddleware( reduxThunk ))
 
 export default store
