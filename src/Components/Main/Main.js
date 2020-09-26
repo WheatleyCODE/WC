@@ -24,8 +24,6 @@ import TestBlock from './TestBlock/TestBlock'
 import Games from '../Games/Games';
 import Daggers from '../Games/Daggers/Daggers';
 
-
-// Создаём кантейнер <ClipsConteiner> </ClipsConteiner>
 let mapStateToProps = (state) => {
  return {
     dialogsData:state.dialogsData.dialogs
@@ -38,6 +36,7 @@ let mapDispatchToProps = (dispatch) => {
    }
  }
 }
+// Создаём кантейнер <ClipsConteiner> </ClipsConteiner>
 const ClipsConteiner = connect(mapStateToProps, mapDispatchToProps) (Clips)
 // Которая отрисует нужную компоненту(Clips) в обертке (ClipsConteiner)
 function Main(props) {

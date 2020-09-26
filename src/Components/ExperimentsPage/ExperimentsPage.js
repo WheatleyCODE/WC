@@ -3,7 +3,7 @@ import s from './ExperimentsPage.module.scss'
 import PartOne from './PartOne/PartOne'
 import PartThree from './PartThree/PartThree';
 import PartTwo from './PartTwo/PartTwo'
-
+import PartFour from './PartFour/PartFour'
 
 class ExperimentsPage extends React.Component {
 
@@ -11,6 +11,7 @@ class ExperimentsPage extends React.Component {
         showPartOne: false,
         showPartTwo: false,
         showPartThre: false,
+        showPartFour: false,
     }
 
     PrintPartOne = () =>{
@@ -28,11 +29,17 @@ class ExperimentsPage extends React.Component {
             showPartThre: !this.state.showPartThre
           })
     }
+    PrintPartFour = () =>{
+        this.setState({
+            showPartFour: !this.state.showPartFour
+          })
+    }
     render() {
 
         let partOne = (this.state.showPartOne) ? <PartOne /> : undefined
         let partTwo = (this.state.showPartTwo) ? <PartTwo /> : undefined
         let partThre = (this.state.showPartThre) ? <PartThree /> : undefined
+        let partFour = (this.state.showPartFour) ? <PartFour /> : undefined
            
 
         return(
@@ -43,6 +50,8 @@ class ExperimentsPage extends React.Component {
                 {partTwo}
                 <button className={s.buttonPart} onClick={this.PrintPartThre}>Show Part Three</button>
                 {partThre}
+                <button className={s.buttonPart} onClick={this.PrintPartFour}>Show Part Four</button>
+                {partFour}
             </div>
         )
     }
