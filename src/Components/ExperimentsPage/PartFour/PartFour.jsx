@@ -10,38 +10,33 @@ import {
   AddAsyncActionCreator,
 } from '../../../Redux/ExperimentsPageCounterReducer'
 
-class PartFour extends React.Component {
-  componentDidMount() {
-  }
+const PartFour = (props) => {
+  const {
+    counter,
+    OnAdd,
+    OnSub,
+    OnAddNum,
+    OnSubNum,
+    OnSyncAdd,
+  } = props
 
-  render() {
-    const {
-      counter,
-      OnAdd,
-      OnSub,
-      OnAddNum,
-      OnSubNum,
-      OnSyncAdd,
-    } = this.props
-
-    return (
-      <div className={s.mainPartFour}>
-        <h1>Счетчик: {counter}</h1>
-        <hr />
-        <div className={s.buttonDiv}>
-          <div>
-            <button onClick={OnAdd} type="button">Прибавить 1</button>
-            <button onClick={OnSub} type="button">Вычесть 1</button>
-          </div>
-          <div>
-            <button onClick={() => { OnAddNum(10) }} type="button">Прибавить 10</button>
-            <button onClick={() => { OnSubNum(10) }} type="button">Вычесть 10</button>
-            <button onClick={() => { OnSyncAdd(100) }} type="button">Добавить 100 через 3с</button>
-          </div>
+  return (
+    <div className={s.mainPartFour}>
+      <h1>Счетчик: {counter}</h1>
+      <hr />
+      <div className={s.buttonDiv}>
+        <div>
+          <button onClick={OnAdd} type="button">Прибавить 1</button>
+          <button onClick={OnSub} type="button">Вычесть 1</button>
+        </div>
+        <div>
+          <button onClick={() => { OnAddNum(10) }} type="button">Прибавить 10</button>
+          <button onClick={() => { OnSubNum(10) }} type="button">Вычесть 10</button>
+          <button onClick={() => { OnSyncAdd(100) }} type="button">Добавить 100 через 3с</button>
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 function mapStateToProps(state) {
@@ -68,5 +63,14 @@ PartFour.propTypes = {
   OnSubNum: PropTypes.func,
   OnSyncAdd: PropTypes.func,
 }
+
+PartFour.defaultProps = {
+  counter: 0,
+  OnAdd: () => console.error('Ошибка'),
+  OnSub: () => console.error('Ошибка'),
+  OnAddNum: () => console.error('Ошибка'),
+  OnSubNum: () => console.error('Ошибка'),
+  OnSyncAdd: () => console.error('Ошибка'),
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(PartFour);

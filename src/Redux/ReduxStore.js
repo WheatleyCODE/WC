@@ -24,13 +24,13 @@ const loggerMiddleware = store => next => action => {
   return result
 }
 
-let reducers = combineReducers({
+const reducers = combineReducers({
   profileData: profileReducer,
   friendsData: friendsReducer,
   dialogsData: dialogsReducer,
   ExperimentsCounterData: experimentsPageCounterReducer,
 })
 
-let store = createStore(reducers, composeEnhancers(applyMiddleware( reduxThunk, loggerMiddleware )))
+const store = createStore(reducers, composeEnhancers(applyMiddleware(reduxThunk, loggerMiddleware)))
 
 export default store
