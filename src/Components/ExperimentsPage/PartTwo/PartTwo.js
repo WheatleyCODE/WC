@@ -6,13 +6,8 @@ import QuizCreator from './QuizCreator/QuizCreator'
 import axios from 'axios'
 import Loader from '../../UI/Loader/Loader'
 
-
-
 class PartTwo extends React.Component {
     renderQuiz = (serverQuiz) => {
-
-        console.log(serverQuiz)
-
         this.setState({
           quiz: <Quiz quiz={serverQuiz} />,
           button: '',
@@ -28,6 +23,10 @@ class PartTwo extends React.Component {
     }
 
     componentDidMount() {
+      this.fetchResponse()
+    }
+
+    fetchResponse() {
       axios.get('https://reactfire-9a16f.firebaseio.com/quizes.json').then(response => {
         // console.log(response.data)
 
@@ -48,6 +47,7 @@ class PartTwo extends React.Component {
  
       })
     }
+    
 
     render() {
         return (
@@ -60,7 +60,9 @@ class PartTwo extends React.Component {
                         this.state.loading? <Loader/> : null
                     }
                 </Layout>
-                <QuizCreator/>
+                  <QuizCreator rerenderQuiz={() => {
+                    this.fetchResponse()
+                  }}/>
             </div>
         )
     }

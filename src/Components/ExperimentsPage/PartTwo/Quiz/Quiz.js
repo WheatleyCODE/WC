@@ -5,40 +5,12 @@ import s from './Quiz.module.scss'
 class Quiz extends React.Component {
 
     state = {
-        calcTrueAnsver: 0,
-        activeQU : 0,
-        // quizes: [
-        //     {
-        //         idQuest: 1,
-        //         answers: ['Голубое', 'Красное', 'Зелёное', 'Розовое'],
-        //         question: 'Какого цвета небо?',
-        //         trueAnsver: 0,
-        //         right: false,
-        //         click: false,
-        //     },
-        //     {
-        //         idQuest: 2,
-        //         answers: ['Умножить на 10', 'Умножить на 0', 'Умножить на 7', 'Привет'],
-        //         question: 'Как считать возраст котов?',
-        //         trueAnsver: 2,
-        //         right: false,
-        //         click: false,
-        //     },
-        //     {
-        //         idQuest: 3,
-        //         answers: ['путэн', 'Путин', 'путен', 'патин'],
-        //         question: 'Лучший президент России и всего мира?',
-        //         trueAnsver: 1,
-        //         right: false,
-        //         click: false,
-        //     },
-            
-        // ],
-        quizes: this.props.quiz
+      calcTrueAnsver: 0,
+      activeQU: 0,
+      quizes: this.props.quiz
     }
 
     resultClick = (index) => {
-    
         console.log('dsds', index)
         let NewQuiz = this.state.quizes
         NewQuiz[index].click = !this.state.quizes[index].click
@@ -49,11 +21,9 @@ class Quiz extends React.Component {
 
     }
 
-
     ansverClick = (indexAnsver) => {
 
-       let currentQuest = this.state.activeQU
-
+      let currentQuest = this.state.activeQU
         if(indexAnsver === this.state.quizes[currentQuest].trueAnsver) {
             console.log('Правильно')
             let NewActiveQU = this.state.activeQU + 1

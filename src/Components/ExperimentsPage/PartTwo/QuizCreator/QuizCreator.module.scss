@@ -13,3 +13,10 @@
    margin-left: -40px;
    border-color: #000;
 }
+form button {
+    margin: 10px 30px;
+    padding: 10px;
+}
+form button:valid {
+   background-color: rgb(60, 255, 86);
+}

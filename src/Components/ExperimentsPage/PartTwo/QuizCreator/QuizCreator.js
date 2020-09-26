@@ -67,8 +67,7 @@ export default class QuizCreator extends React.Component {
     }
 
     createQuizHandler = async (event) => {
-        event.preventDefault()
-
+      event.preventDefault()
         try {
             const response = await axios.post('https://reactfire-9a16f.firebaseio.com/quizes.json', this.state.quiz)
             console.log(response.data)
@@ -82,7 +81,6 @@ export default class QuizCreator extends React.Component {
         } catch (e) {
             console.log(e)
         }
-
         // axios.post('https://reactfire-9a16f.firebaseio.com/quizes.json', this.state.quiz)
         //     .then( response => {
         //         console.log(response)
@@ -90,8 +88,11 @@ export default class QuizCreator extends React.Component {
         //     .catch( err => {
         //         console.log(err)
         //     })
+        
+        this.props.rerenderQuiz()
+
     }
-     
+    
     changeHandler = (value, controlName) => {
         const formControls = { ...this.state.formControls }
         const control = { ...formControls[controlName] }
@@ -153,7 +154,7 @@ export default class QuizCreator extends React.Component {
                                 { text: 4, value: 3 }
                             ]}
                         />
-                        <button disabled={!this.state.isFormValid} onClick={this.addQuestHandler}>Добавить воппрос</button>
+                        <button disabled={!this.state.isFormValid} onClick={this.addQuestHandler}>Добавить вопрос</button>
                         <button disabled={this.state.quiz.length === 0} onClick={this.createQuizHandler}>Создать тест</button>
                     </form>
                 </div>
