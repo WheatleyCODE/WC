@@ -44,13 +44,13 @@ class ExperimentsPage extends React.Component {
 
         return(
             <div className={s.ExperimentsPageMain}>
-                <button className={s.buttonPart} onClick={this.PrintPartOne}>Show Part One</button>
+                <button className={s.buttonPart} onClick={this.PrintPartOne}>Show Part One (Ну и говнище)</button>
                 {partOne}
-                <button className={s.buttonPart} onClick={this.PrintPartTwo}>Show Part Two</button>
+                <button className={s.buttonPart} onClick={this.PrintPartTwo}>Show Part Two (Ну и говнище)</button>
                 {partTwo}
-                <button className={s.buttonPart} onClick={this.PrintPartThre}>Show Part Three</button>
+                <button className={s.buttonPart} onClick={this.PrintPartThre}>Show Part Three (Ну и говнище)</button>
                 {partThre}
-                <button className={s.buttonPart} onClick={this.PrintPartFour}>Show Part Four</button>
+                <button className={s.buttonPart} onClick={this.PrintPartFour}>Show Part Four (Вроде бы нормально)</button>
                 {partFour}
             </div>
         )
