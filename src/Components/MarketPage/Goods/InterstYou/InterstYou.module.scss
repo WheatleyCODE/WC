@@ -1,0 +1,62 @@
+.InterstYouMain {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
+  margin-top: 18px;
+  padding-top: 3px;
+  padding-bottom: 30px;
+}
+.good {
+  width: 180px;
+  height: 240px;
+  border-radius: 5px;
+  margin-top: 12px;
+  position: relative;
+}
+.good img {
+  width: 100%;
+  border: 1px solid #ccc;
+}
+.good a {
+  color: #000;
+  text-decoration: none;
+}
+.good a:hover {
+  text-decoration: underline;
+}
+.good span {
+  font-size: 13px;
+  text-align: left;
+  display: block;
+  width: 100%;
+  padding: 1px;
+  padding-left: 4px;
+}
+.price {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+}
+.brend a{
+  color:rgb(100, 100, 100);
+}
+.goodsStack {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+span.deleteImg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+  color: rgba(0, 0, 0, 0);
+  font-size: 15px;
+}
+span.deleteImg:hover {
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}

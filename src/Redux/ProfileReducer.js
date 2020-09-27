@@ -10,27 +10,9 @@ export const addPostActionCreator = () => ({ type: ADD_POST })
 const initialState = {
   posts: [
     { id: 1337, message: 'Hey this is post, really?' },
-    { id: 1338, message: 'Новый старый пост' },
   ],
   newPostText: '',
 }
-
-// const profileReducer = (state = initialState, action) => {
-//   if (action.type === ADD_POST) {
-//     const arr = state.posts
-//     const newPost = {
-//       id: arr[arr.length - 1].id + 1,
-//       message: state.newPostText,
-//     }
-//     if (newPost.message !== '') {
-//       arr.push(newPost)
-//       state.newPostText = ''
-//     }
-//   } else if (action.type === ADD_NEW_TEXT_POST) {
-//     state.newPostText = action.newText
-//   }
-//   return state
-// }
 
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {

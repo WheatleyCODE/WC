@@ -1,0 +1,12 @@
+.MarketCatalogBlockMain {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
+  margin-top: 18px;
+  padding: 10px 0px 20px 0px;
+}
+.goodsStack {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

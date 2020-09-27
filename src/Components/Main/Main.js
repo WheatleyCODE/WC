@@ -23,6 +23,7 @@ import Authorization from '../Authorization/Authorization'
 import TestBlock from './TestBlock/TestBlock'
 import Games from '../Games/Games';
 import Daggers from '../Games/Daggers/Daggers';
+import MarketPage from '../MarketPage/MarketPage';
 
 let mapStateToProps = (state) => {
  return {
@@ -72,6 +73,7 @@ function Main(props) {
 
         <Route path='/games' component={Games} />
         <Route path='/daggers' component={Daggers}/>
+        <Route path='/market' component={MarketPage}/>
 
         {/* Обработка страницы 404 */}
         {/* Так же ещё есть редирект */}

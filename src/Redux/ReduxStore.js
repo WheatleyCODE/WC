@@ -3,6 +3,7 @@ import profileReducer from './ProfileReducer';
 import friendsReducer from './FriendsReducer';
 import dialogsReducer from './DialogsReducer';
 import experimentsPageCounterReducer from './ExperimentsPageCounterReducer'
+import marketPage_Goods_Reducer from './MarketPage_Goods_Reducer'
 
 const {
   createStore,
@@ -18,7 +19,7 @@ const composeEnhancers =
       // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
     }) : compose;
 
-const loggerMiddleware = store => next => action => {
+const loggerMiddleware = (store) => (next) => (action) => {
   const result = next(action)
   console.log('Middleware', store.getState())
   return result
@@ -29,6 +30,7 @@ const reducers = combineReducers({
   friendsData: friendsReducer,
   dialogsData: dialogsReducer,
   experimentsCounterData: experimentsPageCounterReducer,
+  marketPageGoodsData: marketPage_Goods_Reducer,
 })
 
 const store = createStore(reducers, composeEnhancers(applyMiddleware(reduxThunk, loggerMiddleware)))

@@ -21,7 +21,7 @@ function SideBar() {
         <NavLink className={s.navLink} to='/work' activeClassName={s.active}><li><i className="fa fa-briefcase" aria-hidden="true"></i><span>Работа</span></li></NavLink>
         <NavLink className={s.navLink} to='/pay' activeClassName={s.active}><li><i className="fa fa-usd" aria-hidden="true"></i><span>Git Hub</span></li></NavLink>
         <hr></hr>
-        <NavLink className={s.navLink} to='/goods' activeClassName={s.active}><li><i className="fa fa-shopping-bag" aria-hidden="true"></i><span>Товары</span></li></NavLink>
+        <NavLink className={s.navLink} to='/market' activeClassName={s.active}><li><i className="fa fa-shopping-bag" aria-hidden="true"></i><span>Маркет</span></li></NavLink>
         <NavLink className={s.navLink} to='/bookmarks' activeClassName={s.active}><li><i className="fa fa-star" aria-hidden="true"></i><span>Закладки</span></li></NavLink>
         <NavLink className={s.navLink} to='/docs' activeClassName={s.active}><li><i className="fa fa-file" aria-hidden="true"></i><span>Документы</span></li></NavLink>
         <hr></hr>
