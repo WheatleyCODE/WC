@@ -3,24 +3,17 @@ import './App.css';
 import Main from './Components/Main/Main.js'
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
-import Aside from './Components/Aside/Aside'
-
-
-
+import AsideBlock from './Components/AsideBlock/AsideBlock'
 
 function App(props) {
   return (
     <div className="App">
       <Header />
       <Main store = {props.store} />
-      <Aside />
+      <AsideBlock />
       <Footer />
     </div>
   );
 }
-
-
-
-
 
 export default App;

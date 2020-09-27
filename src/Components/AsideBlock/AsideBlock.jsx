@@ -1,12 +1,12 @@
 import React from 'react';
-import s from './Aside.module.css';
+import s from './AsideBlock.module.css';
 
-function Aside() {
+function AsideBlock() {
   return (
     <aside className={s.senior_webdev_za_chas}>
       Стань сениором за 1 час всего за 990$
     </aside>
   );
-
 }
-export default Aside;
+
+export default AsideBlock

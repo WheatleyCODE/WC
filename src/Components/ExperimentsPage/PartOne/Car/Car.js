@@ -3,7 +3,6 @@ import s from './Car.module.scss'
 // import Radium from 'radium'
 import PropTypes from 'prop-types'
 
-
 class Car extends React.Component { //Стэйт фулл компонент наследуется от реакт компонент
 
   componentDidMount() {

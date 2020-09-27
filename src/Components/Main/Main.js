@@ -1,11 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
 import s from './Main.module.css';
 import SideBar from './SideBar/SideBar'
 import NarrowColumnWrap from './NarrowColumnWrap/NarrowColumnWrap'
 import WideColumn from './WideColumn/WideColumn'
-import Dialogs from '../Dialogs/Dialogs'
-import DialogsMenu from '../Dialogs/DialogsMenu/DialogsMenu'
-import { Route } from 'react-router-dom';
+import Dialogs from '../Dialogs/Dialogs.jsx'
+import DialogsMenu from '../Dialogs/DialogsMenu/DialogsMenu.jsx'
 import News from '../News/News';
 import NewsMenu from '../News/NewsMenu/NewsMenu';
 import Friends from '../Friends/Friends';
@@ -15,11 +16,10 @@ import Music from '../Music/Music';
 import Video from '../Video/Video';
 import ExperimentsPage from '../ExperimentsPage/ExperimentsPage';
 import Clips from '../Clips/Clips';
-import ClipsMenu from '../Clips/ClipsMenu/ClipsMenu';
+import ClipsMenu from '../Clips/ClipsMenu/ClipsMenu.jsx';
 import Groups from '../Groups/Groups';
 import GroupsMenu from '../Groups/GroupsMenu/GroupsMenu';
-import { connect } from 'react-redux';
-import Authorization from '../Authorization/Authorization'
+import Authorization from '../Authorization/Authorization.jsx'
 import TestBlock from './TestBlock/TestBlock'
 import Games from '../Games/Games';
 import Daggers from '../Games/Daggers/Daggers';
