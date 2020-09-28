@@ -9,20 +9,20 @@ import Dialogs from '../Dialogs/Dialogs.jsx'
 import DialogsMenu from '../Dialogs/DialogsMenu/DialogsMenu.jsx'
 import News from '../News/News';
 import NewsMenu from '../News/NewsMenu/NewsMenu';
-import Friends from '../Friends/Friends';
-import FriendsMenu from '../Friends/FriendsMenu/FriendsMenu';
-import Photos from '../Photos/Photos';
-import Music from '../Music/Music';
-import Video from '../Video/Video';
+import Friends from '../Friends/Friends.jsx';
+import FriendsMenu from '../Friends/FriendsMenu/FriendsMenu.jsx';
+import Photos from '../PhotosPage/PhotosPage';
+import Music from '../MusicPage/MusicPage';
+import Video from '../VideoPage/VideoPage';
 import ExperimentsPage from '../ExperimentsPage/ExperimentsPage';
 import Clips from '../Clips/Clips';
 import ClipsMenu from '../Clips/ClipsMenu/ClipsMenu.jsx';
-import Groups from '../Groups/Groups';
-import GroupsMenu from '../Groups/GroupsMenu/GroupsMenu';
+import Groups from '../Groups/Groups.jsx';
+import GroupsMenu from '../Groups/GroupsMenu/GroupsMenu.jsx';
 import Authorization from '../Authorization/Authorization.jsx'
 import TestBlock from './TestBlock/TestBlock'
-import Games from '../Games/Games';
-import Daggers from '../Games/Daggers/Daggers';
+import Games from '../Games/Games.jsx';
+import Daggers from '../Games/Daggers/Daggers.jsx';
 import MarketPage from '../MarketPage/MarketPage';
 
 let mapStateToProps = (state) => {

@@ -1,13 +1,12 @@
 import React from 'react';
-import s from './Video.module.css';
+import s from './VideoPage.module.css';
 
-function Video() {
+function VideoPage() {
   return (
     <div className={s.videoMain}>
       <div className={s.video}>Видео</div>
       <div className={s.videoCatalog}>Каталог видео</div>
     </div>
   );
-
 }
-export default Video;
+export default VideoPage;

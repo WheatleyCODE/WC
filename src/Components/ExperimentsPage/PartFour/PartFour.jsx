@@ -71,6 +71,6 @@ PartFour.defaultProps = {
   OnAddNum: () => console.error('Ошибка'),
   OnSubNum: () => console.error('Ошибка'),
   OnSyncAdd: () => console.error('Ошибка'),
-};
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(PartFour);

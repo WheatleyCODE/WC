@@ -4,7 +4,7 @@ import s from './Games.module.scss';
 class Games extends React.Component {
   OnGameClik = () => {
     this.props.history.push('/daggers')
- }
+  }
   render() {
     console.log(this.props)
     return (
@@ -26,8 +26,6 @@ class Games extends React.Component {
         </div>
       </div>
     );
-  
   }
-  
 }
 export default Games;

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Car from './Car/Car'
-import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary.jsx';
 import Counter from './Counter/Counter';
-
 
 class ExperimentsPage extends Component {
 
@@ -12,20 +11,24 @@ class ExperimentsPage extends Component {
 
     this.state = {
       cars: [
-        {name: 'Ford', year: 2020},
-        {name: 'Audi', year: '2018'},
-        {name: 'Lada', year: 2025},
-        {name: 'Porshe', year: 2017},
-        {name: 'Mazda', year: 2000}
+        { name: 'Ford', year: 2020 },
+        { name: 'Audi', year: '2018' },
+        { name: 'Lada', year: 2025 },
+        { name: 'Porshe', year: 2017 },
+        { name: 'Mazda', year: 2000 }
       ],
       pageTitle: 'Tittle React',
-      showCars: false
+      showCars: false,
     }
+  }
+
+  componentDidMount() {
+    console.log('Games componentDidMount')
   }
 
   changeTitleHandler = (newTitle) => {
     this.setState({ // Изменение состояния
-      pageTitle: newTitle
+      pageTitle: newTitle,
     })
   }
   changeInputTitleHandler = (event) => {
@@ -50,25 +53,19 @@ class ExperimentsPage extends Component {
     this.setState({cars})
   }
 
-
-
   // componentWillMount() {
   //   console.log('Games componentWillMount')
   // }
-  componentDidMount() {
-    console.log('Games componentDidMount')
-  }
   render() {
     console.log(this.props)
     const divStyle = {
       textAlign: 'center'
     }
-    
     let cars = this.state.cars.map( (elem, index) => {
       if (this.state.showCars) {
         return (
           // Уникальный ключ для реакта
-          <ErrorBoundary  key={index}>
+          <ErrorBoundary key={index}>
             <Car
               name={elem.name}
               year={elem.year}
@@ -83,13 +80,11 @@ class ExperimentsPage extends Component {
     })
 
     return (
-      <div >
+      <div>
         <div style={divStyle}>
           <h1>{this.state.pageTitle}</h1>
-          <input onChange={this.changeInputTitleHandler} ></input>
-          <button
-            onClick={this.clickHandler}
-          >Показать/Скрыть машины</button>
+          <input onChange={this.changeInputTitleHandler} />
+          <button type="button" onClick={this.clickHandler}>Показать/Скрыть машины</button>
 
           {cars}
           <Counter />

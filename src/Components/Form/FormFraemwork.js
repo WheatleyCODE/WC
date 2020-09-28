@@ -1,11 +1,11 @@
 export function createControl(config, validation) {
-    return{
-        ...config,
-        validation,
-        valid: !validation, //false
-        touched: false,
-        value: '',
-    }
+  return {
+    ...config,
+    validation,
+    valid: !validation, // false
+    touched: false,
+    value: '',
+  }
 }
 
 export function validate(value, validation = null) {

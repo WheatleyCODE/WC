@@ -1,13 +1,12 @@
 import React from 'react';
-import s from './Photos.module.css';
+import s from './PhotosPage.module.css';
 
-function Photos() {
+function PhotosPage() {
   return (
     <div className={s.photosMain}>
       <div className={s.alboms}>Мои альбомы</div>
       <div className={s.photos}>Мои фотографии</div>
     </div>
   );
-
 }
-export default Photos;
+export default PhotosPage;

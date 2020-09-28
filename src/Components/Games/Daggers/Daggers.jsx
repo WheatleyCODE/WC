@@ -1,6 +1,5 @@
 import React from 'react';
 import s from './Daggers.module.scss';
-
 /* //////////////////////////////////////////////////// */
 function Square(props) {
   return (
