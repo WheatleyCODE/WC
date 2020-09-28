@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import s from './PartTwo.module.scss'
-import Layout from './hoc/Layout/Layout'
-import Quiz from './Quiz/Quiz'
+import Layout from './hoc/Layout/Layout.jsx'
+import Quiz from './Quiz/Quiz.jsx'
 import QuizCreator from './QuizCreator/QuizCreator'
 import Loader from '../../UI/Loader/Loader'
 import { fetchQuizesActionCreator, renderQuizActionCreator } from '../../../Redux/ExperimentsPage_Quiz_Reducer'
@@ -14,6 +14,7 @@ class PartTwo extends React.Component {
   }
 
   componentDidMount() {
+    // Удодобно можно дестрактить только с хуками.
     this.props.fetchQuizes()
   }
 
