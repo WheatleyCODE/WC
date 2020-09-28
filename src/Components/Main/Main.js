@@ -21,8 +21,8 @@ import Groups from '../Groups/Groups.jsx';
 import GroupsMenu from '../Groups/GroupsMenu/GroupsMenu.jsx';
 import Authorization from '../AuthorizationPage/AuthorizationPage'
 import TestBlock from './TestBlock/TestBlock'
-import Games from '../Games/Games.jsx';
-import Daggers from '../Games/Daggers/Daggers.jsx';
+import Games from '../GamesPage/GamesPage';
+import Daggers from '../GamesPage/Daggers/Daggers.jsx';
 import MarketPage from '../MarketPage/MarketPage';
 import SCSS_Learn from '../SCSS_Learn/SCSS_Learn'
 
