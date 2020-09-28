@@ -47,13 +47,13 @@ class ExperimentsPage extends React.Component {
     const partFour = (showPartFour) ? <PartFour /> : undefined
     return (
       <div className={s.ExperimentsPageMain}>
-        <button type="button" className={s.buttonPart} onClick={this.PrintPartOne}>Show Part One (Ну и говнище)</button>
+        <button type="button" className={s.buttonPart} onClick={this.PrintPartOne}>Show Part One (React Component Test)</button>
         {partOne}
-        <button type="button" className={s.buttonPart} onClick={this.PrintPartTwo}>Show Part Two (Ну и говнище)</button>
+        <button type="button" className={s.buttonPart} onClick={this.PrintPartTwo}>Show Part Two (Quiz)</button>
         {partTwo}
-        <button type="button" className={s.buttonPart} onClick={this.PrintPartThre}>Show Part Three (Ну и говнище)</button>
+        <button type="button" className={s.buttonPart} onClick={this.PrintPartThre}>Show Part Three (Toggle Menu)</button>
         {partThre}
-        <button type="button" className={s.buttonPart} onClick={this.PrintPartFour}>Show Part Four (Вроде бы нормально)</button>
+        <button type="button" className={s.buttonPart} onClick={this.PrintPartFour}>Show Part Four (Counter)</button>
         {partFour}
       </div>
     )
