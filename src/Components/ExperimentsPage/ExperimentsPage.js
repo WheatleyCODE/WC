@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './ExperimentsPage.module.scss'
 import PartOne from './PartOne/PartOne.jsx'
-import PartThree from './PartThree/PartThree';
+import PartThree from './PartThree/PartThree.jsx';
 import PartTwo from './PartTwo/PartTwo'
 import PartFour from './PartFour/PartFour'
 
