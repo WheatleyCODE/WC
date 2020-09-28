@@ -14,7 +14,7 @@ import FriendsMenu from '../Friends/FriendsMenu/FriendsMenu.jsx';
 import Photos from '../PhotosPage/PhotosPage';
 import Music from '../MusicPage/MusicPage';
 import Video from '../VideoPage/VideoPage';
-import ExperimentsPage from '../ExperimentsPage/ExperimentsPage';
+import ExperimentsPage from '../ExperimentsPage/ExperimentsPage.jsx';
 import Clips from '../Clips/Clips';
 import ClipsMenu from '../Clips/ClipsMenu/ClipsMenu.jsx';
 import Groups from '../Groups/Groups.jsx';
