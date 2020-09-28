@@ -8,6 +8,8 @@ const RENDER_QUIZ = 'RENDER_QUIZ'
 
 // Экшен креэйторы
 export const fetchQuizesActionCreator = () => {
+  // Асинхронность на этапе раньше изменения стейта
+  // Делаем запрос => ждём => получаем данные => делаем диспатч с данными в стейт
   return async dispatch => {
     dispatch(fetchQuizesStart())
     try {

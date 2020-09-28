@@ -13,6 +13,7 @@ import {
 const PartFour = (props) => {
   const {
     counter,
+    disable,
     OnAdd,
     OnSub,
     OnAddNum,
@@ -26,13 +27,13 @@ const PartFour = (props) => {
       <hr />
       <div className={s.buttonDiv}>
         <div>
-          <button onClick={OnAdd} type="button">Прибавить 1</button>
-          <button onClick={OnSub} type="button">Вычесть 1</button>
+          <button disabled={disable} onClick={OnAdd} type="button">Прибавить 1</button>
+          <button disabled={disable} onClick={OnSub} type="button">Вычесть 1</button>
         </div>
         <div>
-          <button onClick={() => { OnAddNum(10) }} type="button">Прибавить 10</button>
-          <button onClick={() => { OnSubNum(10) }} type="button">Вычесть 10</button>
-          <button onClick={() => { OnSyncAdd(100) }} type="button">Добавить 100 через 3с</button>
+          <button disabled={disable} onClick={() => { OnAddNum(10) }} type="button">Прибавить 10</button>
+          <button disabled={disable} onClick={() => { OnSubNum(10) }} type="button">Вычесть 10</button>
+          <button disabled={disable} onClick={() => { OnSyncAdd(100) }} type="button">Добавить 100 через 3с</button>
         </div>
       </div>
     </div>
@@ -42,6 +43,7 @@ const PartFour = (props) => {
 function mapStateToProps(state) {
   return {
     counter: state.experimentsCounterData.counter,
+    disable: state.experimentsCounterData.disable,
   }
 }
 
@@ -57,6 +59,7 @@ function mapDispatchToProps(dispatch) {
 
 PartFour.propTypes = {
   counter: PropTypes.number,
+  disable: PropTypes.bool,
   OnAdd: PropTypes.func,
   OnSub: PropTypes.func,
   OnAddNum: PropTypes.func,
@@ -66,6 +69,7 @@ PartFour.propTypes = {
 
 PartFour.defaultProps = {
   counter: 0,
+  disable: false,
   OnAdd: () => console.error('Ошибка'),
   OnSub: () => console.error('Ошибка'),
   OnAddNum: () => console.error('Ошибка'),
