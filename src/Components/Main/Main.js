@@ -19,7 +19,7 @@ import Clips from '../Clips/Clips';
 import ClipsMenu from '../Clips/ClipsMenu/ClipsMenu.jsx';
 import Groups from '../Groups/Groups.jsx';
 import GroupsMenu from '../Groups/GroupsMenu/GroupsMenu.jsx';
-import Authorization from '../Authorization/Authorization.jsx'
+import Authorization from '../AuthorizationPage/AuthorizationPage'
 import TestBlock from './TestBlock/TestBlock'
 import Games from '../Games/Games.jsx';
 import Daggers from '../Games/Daggers/Daggers.jsx';

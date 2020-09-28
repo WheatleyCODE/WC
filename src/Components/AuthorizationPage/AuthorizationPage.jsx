@@ -1,13 +1,13 @@
 import React from 'react'
 import Input from '../UI/Input/Input'
-import s from './Authorization.module.scss'
+import s from './AuthorizationPage.module.scss'
 
 function validateEmail(email) {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 }
 
-class Authorization extends React.Component {
+class AuthorizationPage extends React.Component {
 state = {
   formControls: {
     email: {
@@ -129,4 +129,4 @@ onChangeHandler = (event, controlName) => {
         )
     }
 }
-export default Authorization
+export default AuthorizationPage
