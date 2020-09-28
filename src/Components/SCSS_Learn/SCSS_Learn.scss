@@ -1,0 +1,106 @@
+// @import "ПодключаюФайлы/файл"
+// Коментарий
+
+// Куча функций https://sass-lang.com/documentation/modules
+// С разными эфектами
+
+div.flex {
+  padding: 70px;
+  display: flex;
+  flex-direction: column;
+}
+// Переменные
+$colorRed:  rgb(172, 41, 41);
+$colorBlue: rgb(43, 116, 177);
+$border: 1px solid $colorRed;
+
+// Можно проводить любый мат операции
+$squereSize: 300px / 3 + 10px;
+$blockMargin: 10px 10px 10px 70px;
+
+
+// Шаблон миксин
+@mixin font($color: rgb(0, 255, 0)) {
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color: $color;
+}
+
+// Неограниченное количество параметров
+@mixin padd($padd...) {
+  padding: $padd;
+}
+
+// Условия
+@mixin sizeToColor($width, $height) {
+  @if($width > 100px && $height > 100px) {
+    background-color: rgb(190, 41, 41);
+  }
+  @else {
+    background-color: rgb(37, 37, 200);
+  }
+}
+
+@mixin LinkColor($color, $hover, $active) {
+  color: $color;
+
+  &:hover {
+    color: $hover;
+  }
+  &:active {
+    color: $active;
+  }
+   @content;
+}
+
+
+// Обычное обращение к элементам.
+.block {
+  // Подключение шаблона миксин
+  @include font(#333);
+  background-color: $colorRed;
+  width: $squereSize;
+  height: $squereSize;
+  margin: $blockMargin;
+
+
+  // Вложенные стили
+  ul {
+    list-style: none;
+    // Вложенный стили не делать слишком много вложенности
+    li {
+      background-color: #ccc;
+      // Подключение шаблона миксин фонт
+      @include font(#eee);
+    }
+  }
+}
+
+.block:not(.first) {
+  background-color: $colorBlue;
+  border: $border;
+}
+
+.block.text {
+  // Работает парамет по умолчанию
+  @include font;
+  // Сколько хочу столько и передаю
+  @include padd(20px 20px 50px 50px);
+
+  // Добавляем псевдоклассы
+  &:hover {
+    background-color:rgba(255, 0, 0, 0)
+  }
+  a {
+    // Супер миксин дополняем на ходу
+    @include LinkColor(black, green, purple) {
+      background-color: #ccc;
+
+      &:visited {
+        color: rgb(183, 0, 255);
+      }
+    }
+  }
+  @include sizeToColor($squereSize, $squereSize)
+}
