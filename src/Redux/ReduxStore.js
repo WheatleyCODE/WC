@@ -1,8 +1,8 @@
 import reduxThunk from 'redux-thunk'
-import profileReducer from './ProfileReducer';
-import friendsReducer from './FriendsReducer';
-import dialogsReducer from './DialogsReducer';
-import experimentsPageCounterReducer from './ExperimentsPageCounterReducer'
+import ProfilePage_Reducer from './ProfilePage_Reducer';
+import friendsReducer from './FriendsPage_Reducer';
+import DialogsPage_Reducer from './DialogsPage_Reducer';
+import ExperimentsPage_Counter_Reducer from './ExperimentsPage_Counter_Reducer'
 import marketPage_Goods_Reducer from './MarketPage_Goods_Reducer'
 import experimentsPage_Quiz_Reducer from './ExperimentsPage_Quiz_Reducer'
 
@@ -14,9 +14,9 @@ const {
 } = require('redux');
 
 const composeEnhancers =
-  typeof window === 'object' &&
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+  typeof window === 'object'
+  && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
       // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
     }) : compose;
 
@@ -27,10 +27,10 @@ const composeEnhancers =
 // }
 
 const reducers = combineReducers({
-  profileData: profileReducer,
+  profileData: ProfilePage_Reducer,
   friendsData: friendsReducer,
-  dialogsData: dialogsReducer,
-  experimentsCounterData: experimentsPageCounterReducer,
+  dialogsData: DialogsPage_Reducer,
+  experimentsCounterData: ExperimentsPage_Counter_Reducer,
   experimentsQuizData: experimentsPage_Quiz_Reducer,
   marketPageGoodsData: marketPage_Goods_Reducer,
 })

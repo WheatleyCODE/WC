@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './WideColumn.module.css';
 import Post from './Post/Post'
-import { addNewTextPostActionCreator, addPostActionCreator } from '../../../Redux/ProfileReducer';
+import { addNewTextPostActionCreator, addPostActionCreator } from '../../../Redux/ProfilePage_Reducer';
 
 function WideColumn(props) {
   const newPostElement = React.createRef();

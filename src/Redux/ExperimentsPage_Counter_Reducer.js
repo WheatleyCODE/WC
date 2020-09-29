@@ -46,7 +46,7 @@ const initialState = {
 }
 
 // Редьюсер изметяющий стор
-const ExperimentsPageCounterReducer = (state = initialState, action) => {
+const ExperimentsPage_Counter_Reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ONE:
       return {
@@ -83,4 +83,4 @@ const ExperimentsPageCounterReducer = (state = initialState, action) => {
   }
 }
 
-export default ExperimentsPageCounterReducer
+export default ExperimentsPage_Counter_Reducer

@@ -14,7 +14,7 @@ const initialState = {
   newPostText: '',
 }
 
-const profileReducer = (state = initialState, action) => {
+const ProfilePage_Reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST: {
       const newPosts = [...state.posts]
@@ -40,4 +40,4 @@ const profileReducer = (state = initialState, action) => {
       return state
   }
 }
-export default profileReducer
+export default ProfilePage_Reducer

@@ -8,7 +8,7 @@ import {
   AddNumberActionCreator,
   SubNumberActionCreator,
   AddAsyncActionCreator,
-} from '../../../Redux/ExperimentsPageCounterReducer'
+} from '../../../Redux/ExperimentsPage_Counter_Reducer'
 
 const PartFour = (props) => {
   const {

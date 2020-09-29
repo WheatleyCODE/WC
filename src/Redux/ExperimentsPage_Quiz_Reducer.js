@@ -7,10 +7,10 @@ const FETCH_ERROR = 'FETCH_ERROR'
 const RENDER_QUIZ = 'RENDER_QUIZ'
 
 // Экшен креэйторы
-export const fetchQuizesActionCreator = () => {
+export const fetchQuizesActionCreator = () => (
   // Асинхронность на этапе раньше изменения стейта
   // Делаем запрос => ждём => получаем данные => делаем диспатч с данными в стейт
-  return async dispatch => {
+  async (dispatch) => {
     dispatch(fetchQuizesStart())
     try {
       const responce = await axios.get('https://reactfire-9a16f.firebaseio.com/quizes.json')
@@ -23,7 +23,7 @@ export const fetchQuizesActionCreator = () => {
       dispatch(fetchQuizesError(error))
     }
   }
-}
+)
 
 export function fetchQuizesStart() {
   return {

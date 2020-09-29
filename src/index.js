@@ -1,30 +1,25 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
+import './index.css'
+import * as serviceWorker from './serviceWorker'
+import store from './Redux/ReduxStore'
+import App from './App'
 
-import './index.css';
-import * as serviceWorker from './serviceWorker';
-import store from './Redux/ReduxStore';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
-
-export function renderEnTree (store) {
+export default function renderEnTree() {
   ReactDOM.render(
-        <Provider store={store}>
-          <BrowserRouter>
-            <App store={store} />
-          </BrowserRouter>
-        </Provider>,
-    document.getElementById('root')
+    <Provider store={store}>
+      <BrowserRouter>
+        <App store={store} />
+      </BrowserRouter>
+    </Provider>,
+    document.getElementById('root'),
   );
 }
 
-
-
-
-
 renderEnTree(store)
-store.subscribe( () => {
+store.subscribe(() => {
   renderEnTree(store)
 })
 
