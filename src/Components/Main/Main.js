@@ -24,7 +24,8 @@ import TestBlock from './TestBlock/TestBlock'
 import Games from '../GamesPage/GamesPage';
 import Daggers from '../GamesPage/Daggers/Daggers.jsx';
 import MarketPage from '../MarketPage/MarketPage';
-import SCSS_Learn from '../SCSS_Learn/SCSS_Learn'
+import SCSS_Learn from '../../Learning/SCSS_Learn/SCSS_Learn'
+import Hooks_Learn from '../../Learning/Hooks_Learn/Hooks_Learn'
 
 let mapStateToProps = (state) => {
  return {
@@ -76,6 +77,7 @@ function Main(props) {
         <Route path='/daggers' component={Daggers}/>
         <Route path='/market' component={MarketPage}/>
         <Route path='/scss' component={SCSS_Learn} />
+        <Route path='/hooks' component={Hooks_Learn} />
 
         {/* Обработка страницы 404 */}
         {/* Так же ещё есть редирект */}
