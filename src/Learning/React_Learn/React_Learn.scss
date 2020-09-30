@@ -4,12 +4,43 @@
 }
 .reactLearnBlock {
   width: 796px;
-  height: 400px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
   margin-bottom: 30px;
 }
+.learnBlock {
+  width: 200px;
+  height: 200px;
+  margin: 30px;
+}
 .done {
   border: 5px solid rgb(81, 212, 57);
+}
+
+.learnBlock.entering {
+  animation: square 500ms ease-out forwards;
+}
+
+.learnBlock.exiting {
+  animation: square 300ms ease-in alternate-reverse;
+}
+
+.learnBlock.exited {
+  opacity: 0;
+  transform: translateY(-100px) ;
+}
+
+@keyframes square {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
