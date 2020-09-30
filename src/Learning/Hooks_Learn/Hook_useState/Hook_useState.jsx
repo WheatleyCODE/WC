@@ -27,6 +27,8 @@ function Hook_useState() {
   // const [counter, setCounter] = useState(veryBigComputeInitialCounter())
 
   // ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼ ▼
+  // Правила хуков 1) Их можно исппользовать только в функциональных компонентах
+  // 2) Их нельзы вызывать в результате какого либо выражения наппример if(true)
 
   // Так большое и сложное вычесление вызывается только 1 раз.
   const [counter, setCounter] = useState(() => {

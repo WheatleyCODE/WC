@@ -18,6 +18,7 @@ function Hook_useMemo() {
   // const computed = complexCompute(number)
 
   // Кешируем вычисление
+  // Если значение number не изменилось нам нет смысла вызывать вычисление
   const computed = useMemo(() => {
     return complexCompute(number)
   }, [number] /* сюда нужно передать зависимость */)
