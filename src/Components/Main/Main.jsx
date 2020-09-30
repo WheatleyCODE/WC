@@ -26,6 +26,7 @@ import Daggers from '../GamesPage/Daggers/Daggers';
 import MarketPage from '../MarketPage/MarketPage';
 import SCSS_Learn from '../../Learning/SCSS_Learn/SCSS_Learn'
 import Hooks_Learn from '../../Learning/Hooks_Learn/Hooks_Learn'
+import React_Learn from '../../Learning/React_Learn/React_Learn'
 
 const mapStateToProps = (state) => {
   return {
@@ -74,8 +75,10 @@ function Main({ store }) {
       <Route path="/games" component={Games} />
       <Route path="/daggers" component={Daggers} />
       <Route path="/market" component={MarketPage} />
+
       <Route path="/scss" component={SCSS_Learn} />
       <Route path="/hooks" component={Hooks_Learn} />
+      <Route path="/react" component={React_Learn} />
 
       {/* Обработка страницы 404 */}
       {/* Так же ещё есть редирект */}
