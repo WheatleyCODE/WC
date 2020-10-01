@@ -1,9 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import { NavLink } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 import s from './InterstYou.module.scss';
 
-export function renderGoods(InterestGoods, DeleteImg) {
+export function renderGoods(InterestGoods, OpenModal) {
+
+  // const [favorit, setFavorite] = useState(false)
+
+  // const style = favorit ? { color: 'red' } : { color: 'black' }
+
+  // function addFavoriteHandler() {
+  //   setFavorite((prev)=> !prev)
+  // }
+
   const goods = InterestGoods.map((obj, index) => {
     return (
       <div key={obj.id} className={s.good}>
@@ -12,19 +21,21 @@ export function renderGoods(InterestGoods, DeleteImg) {
         </NavLink>
         <span><NavLink to={`/market/${obj.name}`}>{obj.name}</NavLink></span>
         <span className={s.price}>{obj.price}</span>
-        <span className={s.brend}><NavLink to={`/market/brand/${obj.brand}`}>{obj.brand}</NavLink></span>
-        <span onClick={() => { DeleteImg(obj, obj.id) }} className={s.deleteImg}><i className="fa fa-times" aria-hidden="true"></i></span>
+        <span className={s.brend}><NavLink to={`/market-${obj.brand}`}>{obj.brand}</NavLink></span>
+        <span className={s.favorite}><i className="fa fa-star-o" aria-hidden="true" /></span>
+        {/* <span onClick={addFavoriteHandler} className={s.favorite}><i style={style} className="fa fa-star-o" aria-hidden="true" /></span> */}
+        <Route exact path={`/market/${obj.name}`} render={() => { OpenModal(obj) }} />
       </div>
     )
   })
   return goods
 }
 
-function InterstYou({ InterestGoods, DeleteImg }) {
+function InterstYou({ InterestGoods, OpenModal }) {
   return (
     <div className={s.InterstYouMain}>
       <div className={s.goodsStack}>
-        {renderGoods(InterestGoods, DeleteImg)}
+        {renderGoods(InterestGoods, OpenModal)}
       </div>
     </div>
   );
@@ -32,7 +43,7 @@ function InterstYou({ InterestGoods, DeleteImg }) {
 
 InterstYou.propTypes = {
   InterestGoods: PropTypes.array,
-  DeleteImg: PropTypes.func,
+  OpenModal: PropTypes.func,
 }
 
 InterstYou.defaultProps = {

@@ -15,7 +15,8 @@
 }
 .good img {
   width: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 5px;
 }
 .good a {
   color: #000;
@@ -45,18 +46,20 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-span.deleteImg {
+span.favorite {
   display: block;
   width: 20px;
   height: 20px;
   position: absolute;
   top: 0;
   right: 0;
+  margin-right: 5px;
   text-align: right;
-  color: rgba(0, 0, 0, 0);
-  font-size: 15px;
-}
-span.deleteImg:hover {
-  color: rgb(0, 0, 0);
-  cursor: pointer;
+  color: rgba(0, 0, 0, 0.267);
+  font-size: 24px;
+  font-weight: bold;
+  &:hover {
+    cursor: pointer;
+    color: #000;
+  }
 }

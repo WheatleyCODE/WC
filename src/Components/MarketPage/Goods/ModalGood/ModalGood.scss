@@ -1,0 +1,170 @@
+.backDrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.719);
+  z-index: 50;
+}
+.modalGoodMain {
+  position: fixed;
+  height: 700px;
+  width: 1050px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 51;
+  margin-left: -100px;
+  a {
+    text-decoration: none;
+  }
+
+  .closeModalCross {
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    &:hover {
+      color: rgb(219, 219, 219);
+      cursor: pointer;
+    }
+  }
+}
+.modalGoodContend {
+  height: 700px;
+  width: 1000px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.spanPrice {
+  font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+.modalBox {
+  width: 100%;
+  height: 550px;
+  display: flex;
+}
+.modalFooter {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+}
+.likePanel {
+  width: 70%;
+  height: 50px;
+  display: flex;
+  justify-content: left;
+  button {
+    width: 60px;
+    height: 100%;
+    margin-right: 10px;
+    background-color: rgba(255, 221, 255, 0);
+    border: none;
+    outline: none;
+    i {
+      font-size: 25px;
+      color: rgb(63, 63, 63); 
+      &:hover {
+        color: black;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.modalDiscrioption {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 70%;
+  height: 80px;
+  p {
+    text-align: left;
+    font-size: 14px;
+  }
+}
+.imageColumn {
+  width: 13%;
+  height: 550px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
+}
+.imgItem {
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 5px ;
+  margin-top: 15px;
+  padding: 4px;
+  width: 70px;
+  height: 70px;
+  img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  &:hover {
+    cursor: pointer;
+    border: 1px solid black;
+  }
+}
+.imageMain {
+  
+  width: 55%;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 100%;
+  }
+}
+.nameGoodColumn {
+  width: 32%;
+  height: 550px;
+  button {
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 10px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.brandMarket {
+  &:hover {
+    color: rgb(83, 83, 83);
+  }
+  height: 70px;
+  font-size: 16px;
+  color: black;
+  .brandLogo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    img {
+      height: 85%;
+      margin-left: 15px;
+      margin-right: 15px;
+      border-radius: 50%;
+    }
+    span {
+      text-align: left;
+    }
+  }
+}
+.doodsDiscription {
+  display: block;
+  width: calc(100%-40px);
+  height: 220px;
+  padding: 20px;
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  font-size: 14px;
+}

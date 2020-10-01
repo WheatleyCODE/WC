@@ -4,4 +4,30 @@
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
+  display: flex;
+  justify-content: space-around;
+}
+.AdvantageElem {
+  width: 30%;
+  height: 70px;
+  display: flex;
+}
+.icon {
+  width: 20%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  color:#4a76a8;
+}
+.text {
+  width: 80%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span{
+    font-size: 13px;
+  }
 }

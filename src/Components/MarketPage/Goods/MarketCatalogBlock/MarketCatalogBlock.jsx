@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import s from './MarketCatalogBlock.module.scss';
 import { renderGoods } from '../InterstYou/InterstYou'
 
-function MarketCatalogBlock({ Goods, DeleteImg }) {
+function MarketCatalogBlock({ Goods, OpenModal }) {
 
   return (
     <div className={s.MarketCatalogBlockMain}>
       <div className={s.goodsStack}>
-        {renderGoods(Goods, DeleteImg)}
+        {renderGoods(Goods, OpenModal)}
       </div>
     </div>
   );
