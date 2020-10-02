@@ -105,9 +105,9 @@ const MarketPage_Goods_Reducer = (state = initialState, action) => {
       }
     }
     case ADD_MORE_GOODS: {
+      console.log('привет')
       return {
         ...state,
-        MoreGoods: state.MoreGoods.push(0),
       }
     }
     default:

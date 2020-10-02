@@ -72,6 +72,10 @@
     align-items: center;
     span {
       margin-left: 10px;
+      &:hover {
+        color: black;
+        cursor: pointer;
+      }
     }
     i {
       font-size: 25px;

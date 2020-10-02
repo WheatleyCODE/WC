@@ -18,6 +18,7 @@ function Goods(props) {
     InterestGoods,
     Goods1,
     Goods2,
+    AddMoreGoodsRedux,
   } = props
 
   function OpenModal(obj) {
@@ -67,7 +68,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    AddMoreGoods: () => dispatch(AddMoreGoodsActionCreator()),
+    AddMoreGoodsRedux: () => dispatch(AddMoreGoodsActionCreator()),
   }
 }
 Goods.propTypes = {
