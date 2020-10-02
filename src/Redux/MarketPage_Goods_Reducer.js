@@ -1,7 +1,11 @@
+import axios from 'axios'
 // Константы
 const ADD_FAVORITE = 'ADD_FAVORITE'
-const ADD_MORE_GOODS = 'ADD_MORE_GOODS'
 const ADD_LIKE = 'ADD_LIKE'
+
+const FETCH_GOODS_START = 'FETCH_GOODS_START'
+const FETCH_GOODS_SUCCESS = 'FETCH_GOODS_SUCCESS'
+const FETCH_GOODS_ERROR = 'FETCH_GOODS_ERROR'
 
 // Экшен креэйторы
 export const AddFavoriteGoodActionCreator = (obj) => (
@@ -10,8 +14,25 @@ export const AddFavoriteGoodActionCreator = (obj) => (
 export const AddLikeGoodActionCreator = (obj) => (
   { type: ADD_LIKE, obj }
 )
-export const AddMoreGoodsActionCreator = () => (
-  { type: ADD_MORE_GOODS }
+export const fetchGoodsStartAC = () => ({ type: FETCH_GOODS_START })
+export const fetchGoodsSuccessAC = (serverGoods) => ({ type: FETCH_GOODS_SUCCESS, serverGoods })
+export const fetchQuizesErrorAC = (error) => ({ type: FETCH_GOODS_ERROR, error })
+
+export const fetchGoodsActionCreator = () => (
+  async (dispatch) => {
+    dispatch(fetchGoodsStartAC())
+    try {
+      const responce = await axios.get('https://reactfire-9a16f.firebaseio.com/goods.json')
+      // const serverGoods = []
+      // Object.keys(responce.data).forEach((serverKeyObj) => {
+      //   serverGoods.push(responce.data[serverKeyObj])
+      // })
+      const serverGoods = Object.values(responce.data).flat(1)
+      dispatch(fetchGoodsSuccessAC(serverGoods))
+    } catch (error) {
+      dispatch(fetchQuizesErrorAC(error))
+    }
+  }
 )
 
 // Начально значение стейта
@@ -104,8 +125,36 @@ const MarketPage_Goods_Reducer = (state = initialState, action) => {
         ...NewState,
       }
     }
-    case ADD_MORE_GOODS: {
-      console.log('привет')
+    case FETCH_GOODS_START: {
+      console.log('Начало')
+      return {
+        ...state,
+      }
+    }
+    case FETCH_GOODS_SUCCESS: {
+      // const key = 'goods' + Math.trunc(Math.random()*100000)
+      // const newState = state
+      // const serverGoods = action.serverGoods
+      // serverGoods.forEach((objc) => {
+      //   objc.id = '#' + Math.trunc(Math.random()*100000)
+      // })
+
+      // newState[key] = serverGoods
+      // console.log(newState)
+      // return {
+      //   ...newState,
+      // }
+      const key = 'goods' + Math.trunc(Math.random()*100000)
+      const newState = state
+
+      newState[key] = action.serverGoods
+      console.log(newState)
+      return {
+        ...newState,
+      }
+    }
+    case FETCH_GOODS_ERROR: {
+      console.log('Фейл')
       return {
         ...state,
       }
