@@ -6,8 +6,7 @@ import s from './InterstYou.module.scss';
 import { AddFavoriteGoodActionCreator } from '../../../../Redux/MarketPage_Goods_Reducer';
 
 export function renderGoods(InterestGoods, OpenModal, AddFavorite) {
-
-  const goods = InterestGoods.map((obj, index) => {
+  const goods = InterestGoods.map((obj) => {
     const favorite = obj.isFavorite
     const style = favorite ? { color: 'rgb(240, 191, 0)' } : { color: 'black' }
 
@@ -46,17 +45,17 @@ function InterstYou({ InterestGoods, OpenModal, AddFavorite}) {
 InterstYou.propTypes = {
   InterestGoods: PropTypes.array,
   OpenModal: PropTypes.func,
+  AddFavorite: PropTypes.func,
 }
 
 InterstYou.defaultProps = {
   InterestGoods: [],
-  DeleteImg: () => {},
+  AddFavorite: () => {},
+  OpenModal: () => {},
 }
 
-function mapStateToProps(state) {
-  return {
-
-  }
+function mapStateToProps() {
+  return {}
 }
 
 function mapDispatchToProps(dispatch) {

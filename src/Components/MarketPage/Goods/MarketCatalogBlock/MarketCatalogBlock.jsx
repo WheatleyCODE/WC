@@ -6,7 +6,6 @@ import { renderGoods } from '../InterstYou/InterstYou'
 import { AddFavoriteGoodActionCreator } from '../../../../Redux/MarketPage_Goods_Reducer';
 
 function MarketCatalogBlock({ Goods, OpenModal, AddFavorite}) {
-
   return (
     <div className={s.MarketCatalogBlockMain}>
       <div className={s.goodsStack}>
@@ -18,18 +17,18 @@ function MarketCatalogBlock({ Goods, OpenModal, AddFavorite}) {
 
 MarketCatalogBlock.propTypes = {
   Goods: PropTypes.array,
-  DeleteImg: PropTypes.func,
+  OpenModal: PropTypes.func,
+  AddFavorite: PropTypes.func,
 }
 
 MarketCatalogBlock.defaultProps = {
   Goods: [],
-  DeleteImg: () => {},
+  OpenModal: () => {},
+  AddFavorite: () => {},
 }
 
-function mapStateToProps(state) {
-  return {
-
-  }
+function mapStateToProps() {
+  return {}
 }
 
 function mapDispatchToProps(dispatch) {

@@ -3,8 +3,8 @@ import './BrandGoods.scss'
 
 function BrandGoods() {
   return (
-    <div className="videoMain">
-      <div className="video">BrandGoods</div>
+    <div className="brandMain">
+      <div className="brand">BrandGoods</div>
     </div>
   )
 }
