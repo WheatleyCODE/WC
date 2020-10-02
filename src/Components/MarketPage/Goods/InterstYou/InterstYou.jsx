@@ -1,19 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types'
 import { NavLink, Route } from 'react-router-dom';
 import s from './InterstYou.module.scss';
 
 export function renderGoods(InterestGoods, OpenModal) {
 
-  // const [favorit, setFavorite] = useState(false)
-
-  // const style = favorit ? { color: 'red' } : { color: 'black' }
-
-  // function addFavoriteHandler() {
-  //   setFavorite((prev)=> !prev)
-  // }
-
   const goods = InterestGoods.map((obj, index) => {
+    const [favorit, setFavorite] = useState(false)
+    const style = favorit ? { color: 'rgb(240, 191, 0)' } : { color: 'black' }
+
+    function addFavoriteHandler() {
+      setFavorite((prev) => !prev)
+    }
     return (
       <div key={obj.id} className={s.good}>
         <NavLink to={`/market/${obj.name}`}>
@@ -23,7 +21,7 @@ export function renderGoods(InterestGoods, OpenModal) {
         <span className={s.price}>{obj.price}</span>
         <span className={s.brend}><NavLink to={`/market-${obj.brand}`}>{obj.brand}</NavLink></span>
         <span className={s.favorite}><i className="fa fa-star-o" aria-hidden="true" /></span>
-        {/* <span onClick={addFavoriteHandler} className={s.favorite}><i style={style} className="fa fa-star-o" aria-hidden="true" /></span> */}
+        <span onClick={addFavoriteHandler} className={s.favorite}><i style={style} className="fa fa-star-o" aria-hidden="true" /></span>
         <Route exact path={`/market/${obj.name}`} render={() => { OpenModal(obj) }} />
       </div>
     )

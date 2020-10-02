@@ -27,6 +27,7 @@ import MarketPage from '../MarketPage/MarketPage';
 import SCSS_Learn from '../../Learning/SCSS_Learn/SCSS_Learn'
 import Hooks_Learn from '../../Learning/Hooks_Learn/Hooks_Learn'
 import React_Learn from '../../Learning/React_Learn/React_Learn'
+import BrandPage from '../MarketPage/BrandGoods/BrandGoods'
 
 const mapStateToProps = (state) => {
   return {
@@ -79,6 +80,8 @@ function Main({ store }) {
       <Route path="/scss" component={SCSS_Learn} />
       <Route path="/hooks" component={Hooks_Learn} />
       <Route path="/react" component={React_Learn} />
+
+      <Route path="/market-Apple" component={BrandPage} />
 
       {/* Обработка страницы 404 */}
       {/* Так же ещё есть редирект */}

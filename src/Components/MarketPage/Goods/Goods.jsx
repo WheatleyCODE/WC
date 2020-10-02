@@ -21,7 +21,6 @@ function Goods(props) {
   } = props
 
   function OpenModal(obj) {
-    console.log(obj)
     setOpen(true)
     setcontentModal(obj)
   }
@@ -38,8 +37,7 @@ function Goods(props) {
       .then((response) => {
         const data = Object.values(response.data)
         setMoreGoods((prev) => [...prev,
-          <MarketCatalogBlock OpenModal={OpenModal} Goods={data[0]} />,
-          <MarketCatalogBlock OpenModal={OpenModal} Goods={data[0]} />,
+          <MarketCatalogBlock key="123" OpenModal={OpenModal} Goods={data[0]} />,
         ])
       })
       .catch((e) => console.log(e))

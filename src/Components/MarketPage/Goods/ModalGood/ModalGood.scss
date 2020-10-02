@@ -67,9 +67,15 @@
     background-color: rgba(255, 221, 255, 0);
     border: none;
     outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      margin-left: 10px;
+    }
     i {
       font-size: 25px;
-      color: rgb(63, 63, 63); 
+      color: rgb(121, 121, 121); 
       &:hover {
         color: black;
         cursor: pointer;

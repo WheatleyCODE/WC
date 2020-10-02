@@ -1,31 +1,43 @@
-import React, { useState, useRef } from 'react'
+import React, { useRef } from 'react'
+import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import { AddFavoriteGoodActionCreator, AddLikeGoodActionCreator } from '../../../../Redux/MarketPage_Goods_Reducer'
 import './ModalGood.scss'
 
-export default function ModalGood({open, closeHendler, content}) {
+function ModalGood({ open, closeHendler, content, AddFavorite, Addlike }) {
+
+  const favorite = content.isFavorite
+  const like = content.like
 
   const MainImg = useRef(null)
 
-  const [like, setLike] = useState(false)
   const likeStyles = like ? { color: 'red', fontWeight: 'bold' } : {}
 
-  const [favorite, setfavorite] = useState(false)
   const favoriteStyles = favorite ? { color: '#F0BF00', fontWeight: 'bold' } : {}
 
   function likefn() {
-    setLike((prev) => !prev)
+    Addlike(content)
   }
 
   function favoritefn() {
-    setfavorite((prev) => !prev)
-  }
-
-  function imgChangeHandler() {
-    MainImg.current.src = 'https://lediiks.ru/wp-content/uploads/2019/04/39a3d819364039ea450f4a198e7db866.jpg'
+    AddFavorite(content)
   }
 
   function imgChangeHandlerMain(url) {
     MainImg.current.src = url
+  }
+
+  let renderOtherImg = null
+  if (content.otherImg !== undefined) {
+      renderOtherImg = content.otherImg.map((url, index) => {
+      return (
+        <div key={index} onClick={() => {imgChangeHandlerMain(url)}} className="imgItem">
+          <img src={url} alt="Картинка" />
+        </div>
+      )
+    })
+  } else {
+    renderOtherImg = null
   }
 
   if (open) {
@@ -38,14 +50,12 @@ export default function ModalGood({open, closeHendler, content}) {
             <div className="modalBox">
               <div className="imageColumn">
                 <div onClick={() => {imgChangeHandlerMain(content.img)}} className="imgItem">
-                  <img src={content.img} alt="Картинка"/>
+                  <img src={content.img} alt="Картинка" />
                 </div>
-                <div onClick={imgChangeHandler} className="imgItem">
-                  <img src='https://lediiks.ru/wp-content/uploads/2019/04/39a3d819364039ea450f4a198e7db866.jpg' alt="Картинка"/>
-                </div>
+                {renderOtherImg}
               </div>
               <div className="imageMain">
-                <img ref={MainImg} src={content.img} alt="Картинка"/>
+                <img ref={MainImg} src={content.img} alt="Картинка" />
               </div>
               <div className="nameGoodColumn">
                 <NavLink to={`/market-${content.brand}`}>
@@ -64,7 +74,7 @@ export default function ModalGood({open, closeHendler, content}) {
             </div>
             <div className="modalFooter">
               <div className="likePanel">
-                <button onClick={likefn} type="button"><i style={likeStyles} className="fa fa-heart-o" aria-hidden="true" /></button>
+                <button onClick={likefn} type="button"><i style={likeStyles} className="fa fa-heart-o" aria-hidden="true" /><span>{content.likeCount}</span></button>
                 <button type="button"><i className="fa fa-reply" aria-hidden="true" /></button>
                 <button onClick={favoritefn} type="button"><i style={favoriteStyles} className="fa fa-star-o" aria-hidden="true" /></button>
                 <button type="button">Ещё</button>
@@ -82,3 +92,17 @@ export default function ModalGood({open, closeHendler, content}) {
     return (null)
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    AddFavorite: (obj) => dispatch(AddFavoriteGoodActionCreator(obj)),
+    Addlike: (obj) => dispatch(AddLikeGoodActionCreator(obj)),
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ModalGood)
