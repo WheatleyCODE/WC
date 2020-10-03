@@ -4,6 +4,7 @@
 }
 .reactLearnBlock {
   width: 796px;
+  height: 800px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
@@ -13,6 +14,7 @@
   width: 200px;
   height: 200px;
   margin: 30px;
+  box-sizing: border-box;
 }
 .done {
   border: 5px solid rgb(81, 212, 57);
@@ -23,7 +25,8 @@
 }
 
 .learnBlock.exiting {
-  animation: square 300ms ease-in alternate-reverse;
+  // animation: squareExit 300ms ease-in alternate-reverse;
+  animation: squareExit 1000ms ease-in forwards;
 }
 
 .learnBlock.exited {
@@ -34,13 +37,53 @@
 @keyframes square {
   0% {
     opacity: 0;
-    transform: translateY(-100px);
+    border: 1px solid rgb(255, 255, 255);
   }
   50% {
     opacity: 1;
-    transform: translateY(30px);
+    border: 30px solid rgb(255, 255, 255);
   }
   100% {
-    transform: translateY(0);
+    border: 1px solid rgb(255, 255, 255);
   }
+}
+
+@keyframes squareExit {
+  0% {
+    opacity: 1;
+    border: 1px solid rgb(255, 255, 255);
+  }
+  50% {
+    opacity: 1;
+    border: 10px solid rgb(255, 255, 255);
+  }
+  100% {
+    opacity: 0;
+    border: 100px solid rgb(255, 255, 255);
+  }
+}
+.os-enter {
+  opacity: 0;
+}
+
+.os-enter-active {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+/*.os-enter-done {*/
+/*  transform: translateX(0);*/
+/*}*/
+
+.os-exit {
+  opacity: 1;
+}
+
+.os-exit-active {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.os-exit-done {
+  opacity: 0;
 }
