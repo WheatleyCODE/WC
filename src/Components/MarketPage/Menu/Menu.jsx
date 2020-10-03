@@ -9,7 +9,7 @@ function Menu() {
         <ul className={s.ulMain}>
           <li><NavLink exact activeClassName={s.active} to="/market">Товары</NavLink></li>
           <li><NavLink exact activeClassName={s.active} to="/market/my_orders">Заказы</NavLink></li>
-          <li><NavLink exact activeClassName={s.active} to="/market/favorite">Закладка</NavLink></li>
+          <li><NavLink exact activeClassName={s.active} to="/market/favorite">Закладки</NavLink></li>
           <li><NavLink exact activeClassName={s.active} to="/market/my_products">Мои товары</NavLink></li>
         </ul>
       </nav>

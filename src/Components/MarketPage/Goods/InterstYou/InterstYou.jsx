@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { AddFavoriteGoodActionCreator } from 'Redux/actions';
 import PropTypes from 'prop-types'
 import { NavLink, Route } from 'react-router-dom';
 import s from './InterstYou.module.scss';
-import { AddFavoriteGoodActionCreator } from 'Redux/actions';
 
 export function renderGoods(InterestGoods, OpenModal, AddFavorite) {
   const goods = InterestGoods.map((obj) => {
@@ -24,7 +24,7 @@ export function renderGoods(InterestGoods, OpenModal, AddFavorite) {
         <span className={s.brend}><NavLink to={`/market-${obj.brand}`}>{obj.brand}</NavLink></span>
         <span className={s.favorite}><i className="fa fa-star-o" aria-hidden="true" /></span>
         <span onClick={addFavoriteHandler} className={s.favorite}><i style={style} className="fa fa-star-o" aria-hidden="true" /></span>
-        <Route exact path={`/market/${obj.name}`} render={() => { OpenModal(obj) }} />
+        <Route path={`/market/${obj.name}`} render={() => { OpenModal(obj) }} />
       </div>
     )
   })

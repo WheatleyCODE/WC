@@ -36,8 +36,6 @@ function Goods(props) {
     return <MarketCatalogBlock key={index} OpenModal={OpenModal} Goods={elem} />
   })
 
-  console.log(MarketBlocks)
-
   return (
     <div className={s.GoodsMain}>
       <ModalGood content={contentModal} closeHendler={CloseModal} open={open} />

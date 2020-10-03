@@ -4,6 +4,9 @@ import s from './MarketPage.module.scss';
 import Search from './SearchPanel/SearchPanel'
 import Menu from './Menu/Menu'
 import Goods from './Goods/Goods'
+import Bookmarks from './Bookmarks/Bookmarks'
+import Orders from './Orders/Orders'
+import MyGoods from './MyGoods/MyGoods'
 
 function MarketPage() {
   return (
@@ -12,15 +15,12 @@ function MarketPage() {
       <Menu />
       <div className={s.resultColumn}>
         <Switch>
-          <Route exact path="/market/my_orders" render={() => <div>my_orders</div>} />
-          <Route exact path="/market/favorite" render={() => <div>favorite</div>} />
-          <Route exact path="/market/my_products" render={() => <div>my_products</div>} />
+          <Route exact path="/market/my_orders" render={() => <Orders />} />
+          <Route exact path="/market/favorite" render={() => <Bookmarks />} />
+          <Route exact path="/market/my_products" render={() => <MyGoods />} />
           <Route path="/market" component={Goods} />
           <Redirect to="/market" />
         </Switch>
-        {/* <Orders />
-        <Bookmarks />
-        <Mygoods /> */}
       </div>
     </div>
   );
