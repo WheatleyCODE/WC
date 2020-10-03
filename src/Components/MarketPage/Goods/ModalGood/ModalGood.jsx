@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-import { AddFavoriteGoodActionCreator, AddLikeGoodActionCreator } from '../../../../Redux/MarketPage_Goods_Reducer'
+import { AddFavoriteGoodActionCreator, AddLikeGoodActionCreator } from 'Redux/actions'
 import './ModalGood.scss'
 
 function ModalGood({

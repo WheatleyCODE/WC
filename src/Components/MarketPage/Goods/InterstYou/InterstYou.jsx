@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 import { NavLink, Route } from 'react-router-dom';
 import s from './InterstYou.module.scss';
-import { AddFavoriteGoodActionCreator } from '../../../../Redux/MarketPage_Goods_Reducer';
+import { AddFavoriteGoodActionCreator } from 'Redux/actions';
 
 export function renderGoods(InterestGoods, OpenModal, AddFavorite) {
   const goods = InterestGoods.map((obj) => {

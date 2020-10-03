@@ -1,11 +1,7 @@
-const ADD_POST = 'ADD-POST'
-const ADD_NEW_TEXT_POST = 'ADD-NEW-TEXT-POST'
-
-export const addNewTextPostActionCreator = (text) => (
-  { type: ADD_NEW_TEXT_POST, newText: text }
-)
-
-export const addPostActionCreator = () => ({ type: ADD_POST })
+import {
+  ADD_POST,
+  ADD_NEW_TEXT_POST,
+} from './constants'
 
 const initialState = {
   posts: [

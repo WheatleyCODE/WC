@@ -1,11 +1,11 @@
 import React from 'react'
+import { fetchQuizesActionCreator, renderQuizActionCreator } from 'Redux/actions'
 import { connect } from 'react-redux'
 import s from './PartTwo.module.scss'
-import Layout from './hoc/Layout/Layout.jsx'
-import Quiz from './Quiz/Quiz.jsx'
+import Layout from './hoc/Layout/Layout'
+import Quiz from './Quiz/Quiz'
 import QuizCreator from './QuizCreator/QuizCreator'
 import Loader from '../../UI/Loader/Loader'
-import { fetchQuizesActionCreator, renderQuizActionCreator } from '../../../Redux/ExperimentsPage_Quiz_Reducer'
 
 class PartTwo extends React.Component {
 

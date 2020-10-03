@@ -1,41 +1,11 @@
-import axios from 'axios'
-// Константы
-const ADD_FAVORITE = 'ADD_FAVORITE'
-const ADD_LIKE = 'ADD_LIKE'
+import {
+  ADD_FAVORITE,
+  ADD_LIKE,
+  FETCH_GOODS_START,
+  FETCH_GOODS_SUCCESS,
+  FETCH_GOODS_ERROR,
+} from './constants'
 
-const FETCH_GOODS_START = 'FETCH_GOODS_START'
-const FETCH_GOODS_SUCCESS = 'FETCH_GOODS_SUCCESS'
-const FETCH_GOODS_ERROR = 'FETCH_GOODS_ERROR'
-
-// Экшен креэйторы
-export const AddFavoriteGoodActionCreator = (obj) => (
-  { type: ADD_FAVORITE, obj }
-)
-export const AddLikeGoodActionCreator = (obj) => (
-  { type: ADD_LIKE, obj }
-)
-export const fetchGoodsStartAC = () => ({ type: FETCH_GOODS_START })
-export const fetchGoodsSuccessAC = (serverGoods) => ({ type: FETCH_GOODS_SUCCESS, serverGoods })
-export const fetchQuizesErrorAC = (error) => ({ type: FETCH_GOODS_ERROR, error })
-
-export const fetchGoodsActionCreator = () => (
-  async (dispatch) => {
-    dispatch(fetchGoodsStartAC())
-    try {
-      const responce = await axios.get('https://reactfire-9a16f.firebaseio.com/goods.json')
-      // const serverGoods = []
-      // Object.keys(responce.data).forEach((serverKeyObj) => {
-      //   serverGoods.push(responce.data[serverKeyObj])
-      // })
-      const serverGoods = Object.values(responce.data).flat(1)
-      dispatch(fetchGoodsSuccessAC(serverGoods))
-    } catch (error) {
-      dispatch(fetchQuizesErrorAC(error))
-    }
-  }
-)
-
-// Начально значение стейта
 const initialState = {
   InterestGoods: [
     { likeCount: 5, like: false, isFavorite: false, id: '#100', name: 'Очень красивая кружка', price: '600р', otherImg: ['https://lediiks.ru/wp-content/uploads/2019/04/39a3d819364039ea450f4a198e7db866.jpg', 'https://sc02.alicdn.com/kf/HTB1G38vyMKTBuNkSne1q6yJoXXaI/231560739/HTB1G38vyMKTBuNkSne1q6yJoXXaI.jpg'], img: 'https://www.bilbeo.com/wp-content/uploads/konica-minolta-digital-camera.jpg', category: 'home', brand: 'Apple', discription: 'Кружка изготовлена из прочного полевошпатного фарфора. Эта практичная столовая посуда классического дизайна подойдет для ежедневного использования и сервировки любых блюд и напитков.' },
@@ -61,7 +31,6 @@ const initialState = {
   ],
 }
 
-// Редьюсер изметяющий стор
 const MarketPage_Goods_Reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_FAVORITE: {

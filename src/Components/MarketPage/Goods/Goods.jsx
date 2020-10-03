@@ -5,7 +5,7 @@ import s from './Goods.module.scss';
 import Offers from './Offers/Offers'
 import MarketCatalogBlock from './MarketCatalogBlock/MarketCatalogBlock'
 import Advantage from './Advantage/Advantage'
-import { fetchGoodsActionCreator } from '../../../Redux/MarketPage_Goods_Reducer'
+import { fetchGoodsActionCreator } from 'Redux/actions'
 import ModalGood from './ModalGood/ModalGood'
 
 function Goods(props) {

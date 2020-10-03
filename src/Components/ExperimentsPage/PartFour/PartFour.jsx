@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
-import s from './PartFour.module.scss'
 import {
   AddOneActionCreator,
   SubOneActionCreator,
   AddNumberActionCreator,
   SubNumberActionCreator,
   AddAsyncActionCreator,
-} from '../../../Redux/ExperimentsPage_Counter_Reducer'
+} from 'Redux/actions'
+import s from './PartFour.module.scss'
 
 const PartFour = (props) => {
   const {

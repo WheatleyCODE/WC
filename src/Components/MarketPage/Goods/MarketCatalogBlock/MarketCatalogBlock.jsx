@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types'
 import s from './MarketCatalogBlock.module.scss';
 import { renderGoods } from '../InterstYou/InterstYou'
-import { AddFavoriteGoodActionCreator } from '../../../../Redux/MarketPage_Goods_Reducer';
+import { AddFavoriteGoodActionCreator } from 'Redux/actions';
 
 function MarketCatalogBlock({ Goods, OpenModal, AddFavorite}) {
   return (

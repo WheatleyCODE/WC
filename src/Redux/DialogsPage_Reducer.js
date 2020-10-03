@@ -7,7 +7,7 @@ const initialState = {
     { id: 'bear', name: 'Бурый Медведь', lastMessage: 'Привет' },
     { id: 'king', name: 'Кагияма Тобио', lastMessage: 'Мог сыграть лучше' },
     { id: 'sun', name: 'Хината Шоё', lastMessage: 'Спасибо' },
-  ]
+  ],
 }
 
 const DialogsPage_Reducer = (state = initialState, action) => (state)
