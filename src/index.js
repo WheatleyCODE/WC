@@ -6,6 +6,7 @@ import './index.css'
 import * as serviceWorker from './serviceWorker'
 import store from './Redux/ReduxStore'
 import App from './App'
+import './styles/main.scss'
 
 export default function renderEnTree() {
   ReactDOM.render(
