@@ -9,7 +9,7 @@ export function renderGoods(InterestGoods, OpenModal, AddFavorite) {
   const goods = InterestGoods.map((obj) => {
     const favorite = obj.isFavorite
     const style = favorite ? { color: 'rgb(240, 191, 0)' } : { color: 'black' }
-
+    const faClass = favorite ? 'fas fa-star' : 'fal fa-star'
     function addFavoriteHandler() {
       AddFavorite(obj)
     }
@@ -22,8 +22,7 @@ export function renderGoods(InterestGoods, OpenModal, AddFavorite) {
         <span><NavLink to={`/market/${obj.name}`}>{obj.name}</NavLink></span>
         <span className={s.price}>{obj.price}</span>
         <span className={s.brend}><NavLink to={`/market-${obj.brand}`}>{obj.brand}</NavLink></span>
-        <span className={s.favorite}><i className="fa fa-star-o" aria-hidden="true" /></span>
-        <span onClick={addFavoriteHandler} className={s.favorite}><i style={style} className="fa fa-star-o" aria-hidden="true" /></span>
+        <span onClick={addFavoriteHandler} className={s.favorite}><i style={style} className={faClass} /></span>
         <Route path={`/market/${obj.name}`} render={() => { OpenModal(obj) }} />
       </div>
     )

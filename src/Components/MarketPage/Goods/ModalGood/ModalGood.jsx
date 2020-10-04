@@ -85,9 +85,9 @@ function ModalGood({
             </div>
             <div className="modalFooter">
               <div className="likePanel">
-                <button onClick={likefn} type="button"><i style={likeStyles} className="fa fa-heart-o" aria-hidden="true" /><span>{likeCount}</span></button>
+                <button onClick={likefn} type="button"><i style={likeStyles} className="fal fa-heart" /><span>{likeCount}</span></button>
                 <button type="button"><i className="fa fa-reply" aria-hidden="true" /></button>
-                <button onClick={favoritefn} type="button"><i style={favoriteStyles} className="fa fa-star-o" aria-hidden="true" /></button>
+                <button onClick={favoritefn} type="button"><i style={favoriteStyles} className="fal fa-star" /></button>
                 <button type="button">Ещё</button>
               </div>
               <div className="modalDiscrioption">
