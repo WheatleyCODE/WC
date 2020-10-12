@@ -10,8 +10,8 @@ function App(props) {
     <div className="App">
       <Header />
       <Main store = {props.store} />
-      <AsideBlock />
-      <Footer />
+      {/* <AsideBlock /> */}
+      {/* <Footer /> */}
     </div>
   );
 }

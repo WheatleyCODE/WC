@@ -7,12 +7,12 @@ function Header() {
     <header className={s.main_header}>
       <div className={s.button_panel}>
         <div className={s.logo}>
-          <i className="fa fa-vk" aria-hidden="true" />
+          <i className="fab fa-vk" />
         </div>
         <div className={s.search}>
           <input placeholder="Поиск" />
         </div>
-        <div className={s.noti}><i className="fa fa-bell" aria-hidden="true" /></div>
+        <div className={s.noti}><i className="fas fa-bell" /></div>
         <div className={s.music}>music</div>
         <div className={s.logIn}><div className={s.AuthorizationMain}><NavLink className={s.navLink} to="/authorization"><span>Войти</span></NavLink></div></div>
       </div>

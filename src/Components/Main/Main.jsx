@@ -45,15 +45,14 @@ const ClipsConteiner = connect(mapStateToProps, mapDispatchToProps) (Clips)
 function Main({ store }) {
   return (
     <div className={s.main_div}>
-      <SideBar />
       {/* <Switch> */}
       <Route path="/authorization" component={Authorization} />
       <Route path="/" exact component={TestBlock} />
-      <Route path="/profile" component={NarrowColumnWrap} />
-      <Route path="/profile" render={() => <WideColumn store={store} />} />
+      {/* <Route path="/profile" component={NarrowColumnWrap} /> */}
+      <Route path="/profile" render={() => <div style={{ display: 'flex' }}><SideBar /><NarrowColumnWrap /><WideColumn store={store} /></div>} />
 
-      <Route path="/dialogs" render={() => <Dialogs store={store} />} />
-      <Route path="/dialogs" component={DialogsMenu} />
+      <Route path="/dialogs" render={() => <div style={{ display: 'flex' }}><SideBar /><Dialogs store={store} /><DialogsMenu /></div>} />
+      {/* <Route path="/dialogs" component={DialogsMenu} /> */}
 
       <Route path="/feed" component={News} />
       <Route path="/feed" component={NewsMenu} />
