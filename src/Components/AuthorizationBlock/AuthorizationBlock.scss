@@ -1,0 +1,98 @@
+.AuthorizationBlock {
+  width: 100%;
+  height: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .AuthorizationMain {
+    width: 900px;
+    height: 900px;
+    background-color: rosybrown;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .footer {
+    width: 100%;
+    height: 130px;
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+.leftPanel {
+  margin-top: 130px;
+  width: 560px;
+  height: 600px;
+  background-color: rgb(255, 255, 255);
+  .profiles {
+    width: 560px;
+    height: 330px;
+    background-color: rgb(251, 6, 6);
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .mobileWC {
+    width: 560px;
+    height: 250px;
+    background-color: rgb(251, 6, 6);
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.profiles .profilesContainer {
+  width: 95%;
+  height: 300px;
+  background-color: rgb(2, 129, 248);
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .infoTextBlock {
+    width: 100%;
+    height: 50px;
+    background-color: skyblue;
+  }
+  .profile {
+    width: 170px;
+    height: 220px;
+    background-color: salmon;
+  }
+}
+
+.rightPanel {
+  margin-top: 130px;
+  width: 320px;
+  height: 600px;
+  background-color: rgb(255, 255, 255);
+  .logIn {
+    width: 320px;
+    height: 300px;
+    background-color: rgb(251, 6, 6)
+  }
+  .register {
+    width: 320px;
+    height: 150px;
+    background-color: rgb(251, 6, 6);
+    margin-top: 20px;
+  }
+}
+
+.mobileWC .imageBlock{
+  width: 350px;
+  height: 250px;
+  background-color: rgb(2, 129, 248);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.mobileWC .infoBlock {
+  width: 150px;
+  height: 250px;
+  background-color: rgb(2, 129, 248);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

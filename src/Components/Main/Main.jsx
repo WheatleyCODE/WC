@@ -20,7 +20,7 @@ import ClipsMenu from '../Clips/ClipsMenu/ClipsMenu';
 import Groups from '../Groups/Groups';
 import GroupsMenu from '../Groups/GroupsMenu/GroupsMenu';
 import Authorization from '../AuthorizationPage/AuthorizationPage'
-import TestBlock from './TestBlock/TestBlock'
+import AuthorizationBlock from '../AuthorizationBlock/AuthorizationBlock'
 import Games from '../GamesPage/GamesPage';
 import Daggers from '../GamesPage/Daggers/Daggers';
 import MarketPage from '../MarketPage/MarketPage';
@@ -47,40 +47,29 @@ function Main({ store }) {
     <div className={s.main_div}>
       {/* <Switch> */}
       <Route path="/authorization" component={Authorization} />
-      <Route path="/" exact component={TestBlock} />
-      {/* <Route path="/profile" component={NarrowColumnWrap} /> */}
+      <Route path="/" exact component={AuthorizationBlock} />
       <Route path="/profile" render={() => <div style={{ display: 'flex' }}><SideBar /><NarrowColumnWrap /><WideColumn store={store} /></div>} />
-
       <Route path="/dialogs" render={() => <div style={{ display: 'flex' }}><SideBar /><Dialogs store={store} /><DialogsMenu /></div>} />
-      {/* <Route path="/dialogs" component={DialogsMenu} /> */}
+      <Route path="/feed" render={() => <div style={{ display: 'flex' }}><SideBar /><News store={store} /><NewsMenu /></div>} />
+      <Route path="/groups" render={() => <div style={{ display: 'flex' }}><SideBar /><Groups store={store} /><GroupsMenu /></div>} />
+      <Route path="/friends" render={() => <div style={{ display: 'flex' }}><SideBar /><Friends store={store} /><FriendsMenu /></div>} />
 
-      <Route path="/feed" component={News} />
-      <Route path="/feed" component={NewsMenu} />
+      <Route path="/photos" render={() => <div style={{ display: 'flex' }}><SideBar /><Photos /></div>} />
 
-      <Route path="/groups" component={Groups} />
-      <Route path="/groups" component={GroupsMenu} />
+      <Route path="/music" render={() => <div style={{ display: 'flex' }}><SideBar /><Music /></div>} />
+      <Route path="/video" render={() => <div style={{ display: 'flex' }}><SideBar /><Video /></div>} />
+      <Route path="/experiments" render={() => <div style={{ display: 'flex' }}><SideBar /><ExperimentsPage /></div>} />
+      <Route path="/clips" render={() => <div style={{ display: 'flex' }}><SideBar /><ClipsConteiner /><ClipsMenu /></div>} />
 
-      <Route path="/friends" render={() => <Friends store={store} />} />
-      <Route path="/friends" component={FriendsMenu} />
+      <Route path="/games" render={() => <div style={{ display: 'flex' }}><SideBar /><Games /></div>} />
+      <Route path="/daggers" render={() => <div style={{ display: 'flex' }}><SideBar /><Daggers /></div>} />
+      <Route path="/market" render={() => <div style={{ display: 'flex' }}><SideBar /><MarketPage /></div>} />
 
-      <Route path="/photos" component={Photos} />
+      <Route path="/scss" render={() => <div style={{ display: 'flex' }}><SideBar /><SCSS_Learn /></div>} />
+      <Route path="/hooks" render={() => <div style={{ display: 'flex' }}><SideBar /><Hooks_Learn /></div>} />
+      <Route path="/react" render={() => <div style={{ display: 'flex' }}><SideBar /><React_Learn /></div>} />
 
-      <Route path="/music" component={Music} />
-      <Route path="/video" component={Video} />
-      <Route path="/experiments" component={ExperimentsPage} />
-
-      <Route path="/clips" render={() => <ClipsConteiner />} />
-      <Route path="/clips" component={ClipsMenu} />
-
-      <Route path="/games" component={Games} />
-      <Route path="/daggers" component={Daggers} />
-      <Route path="/market" component={MarketPage} />
-
-      <Route path="/scss" component={SCSS_Learn} />
-      <Route path="/hooks" component={Hooks_Learn} />
-      <Route path="/react" component={React_Learn} />
-
-      <Route path="/market-Apple" component={BrandPage} />
+      <Route path="/market-Apple" render={() => <div style={{ display: 'flex' }}><SideBar /><BrandPage /></div>} />
 
       {/* Обработка страницы 404 */}
       {/* Так же ещё есть редирект */}
