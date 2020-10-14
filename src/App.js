@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import Main from './Components/Main/Main'
-import Footer from './Components/Footer/Footer';
+// import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
-import AsideBlock from './Components/AsideBlock/AsideBlock'
+// import AsideBlock from './Components/AsideBlock/AsideBlock'
 
 function App(props) {
   return (

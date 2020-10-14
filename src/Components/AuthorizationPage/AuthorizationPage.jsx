@@ -8,52 +8,50 @@ function validateEmail(email) {
 }
 
 class AuthorizationPage extends React.Component {
-state = {
-  formControls: {
-    email: {
-      alue: '',
-      type: 'email',
-      label: 'Emeil',
-      errorMessage: 'Введите корректный email',
-      valid: false,
-      touched: false,
-      validation: {
-        reqiured: true,
-        email: true,
+  state = {
+    formControls: {
+      email: {
+        alue: '',
+        type: 'email',
+        label: 'Emeil',
+        errorMessage: 'Введите корректный email',
+        valid: false,
+        touched: false,
+        validation: {
+          reqiured: true,
+          email: true,
+        },
+      },
+      password: {
+        value: '',
+        type: 'password',
+        label: 'Пароль',
+        errorMessage: 'Введите корректный пароль',
+        valid: false,
+        touched: false,
+        validation: {
+          reqiured: true,
+          minLengh: 6,
+        },
       },
     },
-    password: {
-      value: '',
-      type: 'password',
-      label: 'Пароль',
-      errorMessage: 'Введите корректный пароль',
-      valid: false,
-      touched: false,
-      validation: {
-        reqiured: true,
-        minLengh: 6,
-      },
-    },
-  },
-  isFormValid: false,
-}
+    isFormValid: false,
+  }
 
-loginHandler = () => {
+  submitHandler = (event) => {
+    event.preventDefault()
+  }
 
-}
+  loginHandler = () => {
+  }
 
-registerHandler = () => {
+  registerHandler = () => {
+  }
 
-}
-
-submitHandler = (event) => {
-  event.preventDefault()
-}
-
-validateControl(value, validation) {
-  if(!validation) {
-  return true
-}
+  validateControl(value, validation) {
+    if(!validation) {
+      return true
+    }
     let isValid = true
     if(validation.reqiured) {
             isValid = value.trim() !== '' && isValid
@@ -68,28 +66,28 @@ validateControl(value, validation) {
         return isValid
     }
 
-onChangeHandler = (event, controlName) => {
+  onChangeHandler = (event, controlName) => {
 
-  const formControls = { ...this.state.formControls}
-  const control = { ...formControls[controlName]}
+    const formControls = { ...this.state.formControls}
+    const control = { ...formControls[controlName]}
 
-  control.value = event.target.value
-  control.touched = true
-  control.valid = this.validateControl(control.value, control.validation)
+    control.value = event.target.value
+    control.touched = true
+    control.valid = this.validateControl(control.value, control.validation)
 
-  formControls[controlName] = control
+    formControls[controlName] = control
 
-  let isFormValid = true
+    let isFormValid = true
 
-  Object.keys(formControls).forEach( name => {
-    isFormValid = formControls[name].valid && isFormValid
-  })
+    Object.keys(formControls).forEach( name => {
+      isFormValid = formControls[name].valid && isFormValid
+    })
 
-  this.setState({
-    formControls, isFormValid
-  })
-}
-   renderInputs() {
+    this.setState({
+      formControls, isFormValid
+    })
+  }
+      renderInputs() {
        return Object.keys(this.state.formControls).map((controlName, index) => {
            const control = this.state.formControls[controlName]
             return <Input
@@ -106,18 +104,13 @@ onChangeHandler = (event, controlName) => {
         })
     }
     render() {
-
-
-
-        return(
+        return (
         <div className={s.authorizationMain}>
             <div className={s.authorization}>
                     <div className={s.authorizationElem}>
                         <form onSubmit={this.submitHandler}>
-                            
                             {this.renderInputs()}
-
-                            <div>
+                            <div className={s.buttonContainer}>
                                 <button disabled={!this.state.isFormValid} onClick={this.loginHandler} >Войти</button>
                                 <button disabled={!this.state.isFormValid} onClick={this.registerHandler} >Зарегистрироваться</button>
                             </div>

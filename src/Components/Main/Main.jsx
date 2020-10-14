@@ -24,9 +24,9 @@ import AuthorizationBlock from '../AuthorizationBlock/AuthorizationBlock'
 import Games from '../GamesPage/GamesPage';
 import Daggers from '../GamesPage/Daggers/Daggers';
 import MarketPage from '../MarketPage/MarketPage';
-import SCSS_Learn from '../../Learning/SCSS_Learn/SCSS_Learn'
-import Hooks_Learn from '../../Learning/Hooks_Learn/Hooks_Learn'
-import React_Learn from '../../Learning/React_Learn/React_Learn'
+import SCSSLearn from '../../Learning/SCSS_Learn/SCSS_Learn'
+import HooksLearn from '../../Learning/Hooks_Learn/Hooks_Learn'
+import ReactLearn from '../../Learning/React_Learn/React_Learn'
 import BrandPage from '../MarketPage/BrandGoods/BrandGoods'
 
 const mapStateToProps = (state) => {
@@ -48,7 +48,7 @@ function Main({ store }) {
       {/* <Switch> */}
       <Route path="/authorization" component={Authorization} />
       <Route path="/" exact component={AuthorizationBlock} />
-      <Route path="/profile" render={() => <div style={{ display: 'flex' }}><SideBar /><NarrowColumnWrap /><WideColumn store={store} /></div>} />
+      <Route path="/profile" render={() => <div style={{ display: 'flex' }}><SideBar /><NarrowColumnWrap /><WideColumn /></div>} />
       <Route path="/dialogs" render={() => <div style={{ display: 'flex' }}><SideBar /><Dialogs store={store} /><DialogsMenu /></div>} />
       <Route path="/feed" render={() => <div style={{ display: 'flex' }}><SideBar /><News store={store} /><NewsMenu /></div>} />
       <Route path="/groups" render={() => <div style={{ display: 'flex' }}><SideBar /><Groups store={store} /><GroupsMenu /></div>} />
@@ -65,9 +65,9 @@ function Main({ store }) {
       <Route path="/daggers" render={() => <div style={{ display: 'flex' }}><SideBar /><Daggers /></div>} />
       <Route path="/market" render={() => <div style={{ display: 'flex' }}><SideBar /><MarketPage /></div>} />
 
-      <Route path="/scss" render={() => <div style={{ display: 'flex' }}><SideBar /><SCSS_Learn /></div>} />
-      <Route path="/hooks" render={() => <div style={{ display: 'flex' }}><SideBar /><Hooks_Learn /></div>} />
-      <Route path="/react" render={() => <div style={{ display: 'flex' }}><SideBar /><React_Learn /></div>} />
+      <Route path="/scss" render={() => <div style={{ display: 'flex' }}><SideBar /><SCSSLearn /></div>} />
+      <Route path="/hooks" render={() => <div style={{ display: 'flex' }}><SideBar /><HooksLearn /></div>} />
+      <Route path="/react" render={() => <div style={{ display: 'flex' }}><SideBar /><ReactLearn /></div>} />
 
       <Route path="/market-Apple" render={() => <div style={{ display: 'flex' }}><SideBar /><BrandPage /></div>} />
 

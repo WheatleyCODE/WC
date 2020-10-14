@@ -5,14 +5,14 @@
     flex-direction: column;
     align-items: center;
     width: 320px;
-    height: 300px;
-    background-color: rgb(109, 0, 0);
-    border-radius: 5px;
-    box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
+    height: 240px;
     margin-bottom: 30px;
 }
 .authorizationElem {
-  margin: 50px;
+  margin-top: 20px;
+  label {
+      font-size: 14px;
+  }
 }
 .authorization form input {
     display: block;
@@ -37,4 +37,8 @@
     cursor: not-allowed;
     border: 1px solid  rgb(131, 131, 131);
 }
+.buttonContainer {
+    width: 260px;
+}
+
 

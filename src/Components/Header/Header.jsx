@@ -1,8 +1,9 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 import s from './Header.module.css';
 
-function Header() {
+function Header(props) {
+  const { isLogin, avatar, firstName } = props
   return (
     <header className={s.main_header}>
       <div className={s.button_panel}>
@@ -13,10 +14,17 @@ function Header() {
           <input placeholder="Поиск" />
         </div>
         <div className={s.noti}><i className="fas fa-bell" /></div>
-        <div className={s.music}>music</div>
-        <div className={s.logIn}><div className={s.AuthorizationMain}><NavLink className={s.navLink} to="/authorization"><span>Войти</span></NavLink></div></div>
+        {isLogin ? <div className={s.music}>music</div> : null}
+        {isLogin ? <div className={s.logIn}><span>{firstName}</span><img src={avatar} alt="avatar" /></div> : null}
       </div>
     </header>
   );
 }
-export default Header;
+function mapStateToProps(state) {
+  return {
+    isLogin: state.profileData.isLogin,
+    avatar: state.profileData.user.avatar,
+    firstName: state.profileData.user.firstName,
+  }
+}
+export default connect(mapStateToProps, null)(Header);

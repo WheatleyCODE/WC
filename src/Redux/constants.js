@@ -22,3 +22,6 @@ export const FETCH_GOODS_ERROR = 'FETCH_GOODS_ERROR'
 // Profile Page
 export const ADD_POST = 'ADD-POST'
 export const ADD_NEW_TEXT_POST = 'ADD-NEW-TEXT-POST'
+export const PUSH_USER_ONE = 'PUSH_USER_ONE'
+export const PUSH_USER_TWO = 'PUSH_USER_TWO'
+export const PUSH_USER_TREE = 'PUSH_USER_TREE'

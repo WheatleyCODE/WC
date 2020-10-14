@@ -65,6 +65,14 @@
   margin-left:60px ;
   margin-right:0px;
 }
+.logIn img {
+  height: 80%;
+  border-radius: 50%;
+}
+.logIn span {
+  color: #fff;
+  margin-right: 10px;
+}
 .navLink {
   display: block;
   width: 140px;
