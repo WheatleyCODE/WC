@@ -17,6 +17,7 @@ import {
   FETCH_GOODS_ERROR,
   ADD_POST,
   ADD_NEW_TEXT_POST,
+  ADD_NEW_STATUS,
   PUSH_USER_ONE,
   PUSH_USER_TWO,
   PUSH_USER_TREE,
@@ -129,7 +130,8 @@ export const addNewTextPostActionCreator = (text) => (
   { type: ADD_NEW_TEXT_POST, newText: text }
 )
 
-export const addPostActionCreator = (text) => ({ type: ADD_POST, text })
+export const addPostActionCreator = (text) => ({ type: ADD_POST, newText: text })
+export const addNewStatusActionCreator = (text) => ({ type: ADD_NEW_STATUS, newStatus: text })
 export const pushUserOneActionCreator = () => ({ type: PUSH_USER_ONE })
 export const pushUserTwoActionCreator = () => ({ type: PUSH_USER_TWO })
 export const pushUserThreeActionCreator = () => ({ type: PUSH_USER_TREE })

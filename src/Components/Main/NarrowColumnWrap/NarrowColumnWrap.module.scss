@@ -10,18 +10,82 @@
   padding-top: 20px;
   border-radius: 5px;
   box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
-}
-.avatar_block img {
-  border-radius:3px;
-  width: 88%;
+  img {
+    border-radius:3px;
+    width: 100%;
+  }
+  .avatarImage {
+    width: 88%;
+    margin: auto;
+    position: relative;
+    .avatarMenu {
+      position: absolute;
+      bottom: 5px;
+      width: 100%;
+      div {
+        background-color: rgba(0, 0, 0, 0.52);
+        padding: 5px 0px;
+        padding-left: 10px;
+        display: flex;
+        opacity: 0;
+        span, i {
+          color:rgb(195, 195, 195);
+        }
+        span {
+          margin-left: 10px;
+          font-size: 14px;
+        }
+
+        &:hover span {
+          color:rgb(230, 230, 230);
+        }
+        &:hover i {
+          color:rgb(230, 230, 230);
+        }
+      }
+    }
+    .delete {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 20px;
+      height: 20px;
+      background-color: rgba(0, 0, 0, 0.52);
+      padding: 0;
+      margin: 0;
+      outline: none;
+      opacity: 0;
+      &:hover {
+        cursor: pointer;
+      }
+      i {
+        color:rgb(195, 195, 195);
+      }
+    }
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover .avatarMenu div {
+      opacity: 1;
+    }
+    &:hover .delete {
+      opacity: 1;
+    }
+  }
 }
 .avatar_block button {
   background-color: rgba(122, 150, 194, 0.226);
-  padding: 5px 12px;
+  height: 30px;
+  padding: 5px 15px;
   border: none;
   margin: 10px 5px;
   border-radius:3px;
   color: rgb(93, 115, 143);
+  outline: none;
+  &:hover {
+    cursor: pointer;
+  }
 }
 .avatar_block .redact_button {
   padding: 7px 30px;
@@ -34,11 +98,37 @@
   margin-top:18px ;
   border-radius:5px;
   box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
+  display: flex;
+  align-items: center;
+  text-align: left;
   button {
     position: absolute;
+    background-color: #fff;
+    border: none;
     right: 0;
     top: 0;
     height: 20px;
+    margin-top:3px;
+    color: rgb(139, 139, 139);
+    outline: none;
+    i {
+      font-size: 15px;
+      margin: 2px;
+    }
+    &:hover {
+      cursor: pointer;
+      color: rgb(63, 63, 63);
+    }
+  }
+  span {
+    font-size: 14px;
+    width: 100%;
+    padding-right: 5px;
+    i {
+      font-size: 20px;
+      margin-right: 7px;
+      margin-left: 20px;
+    }
   }
 }
 .present_block {
@@ -103,4 +193,7 @@
     margin-left: 10px;
     padding: 5px;
   }
+}
+.iconBlue i {
+  color:#234b79;
 }

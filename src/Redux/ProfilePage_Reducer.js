@@ -4,10 +4,11 @@ import {
   PUSH_USER_ONE,
   PUSH_USER_TWO,
   PUSH_USER_TREE,
+  ADD_NEW_STATUS,
 } from './constants'
 
 const initialState = {
-  isLogin: false,
+  isLogin: true,
   user: {
     firstName: 'Дмитрий',
     lastName: 'Бажаев',
@@ -18,10 +19,14 @@ const initialState = {
     university: 'ННГУ им Лобачевского',
     work: 'Front-end developer',
   },
-  posts: [
-    { text: 'Дмитрий Бажаев one', id: '1' },
-    { text: 'Дмитрий Бажаев two', id: '2' },
-  ],
+  alert: 'Укажите вашу школу',
+  posts: {
+    postText: '',
+    posts: [
+      { id: '1', text: 'Самый лучший пост', date: '12 сен 2020', authorFirstName: 'Дмитрий', authorLastName: 'Бажаев', authorAvatar: 'https://sun9-56.userapi.com/impf/c830709/v830709215/f5ab2/xBYyujDqwDc.jpg?size=200x0&quality=90&crop=100,0,1863,1864&sign=c5e26b0f8f98c0cbef9eb4e50859635f&ava=1'},
+      { id: '2', text: 'Второй лучший пост в мире', date: '15 сен 2020', authorFirstName: 'Дмитрий', authorLastName: 'Бажаев', authorAvatar: 'https://sun9-56.userapi.com/impf/c830709/v830709215/f5ab2/xBYyujDqwDc.jpg?size=200x0&quality=90&crop=100,0,1863,1864&sign=c5e26b0f8f98c0cbef9eb4e50859635f&ava=1'},
+    ],
+  },
   photo: [
     { id: 'pho1', url: 'https://sun9-56.userapi.com/impf/c830709/v830709215/f5ab2/xBYyujDqwDc.jpg?size=200x0&quality=90&crop=100,0,1863,1864&sign=c5e26b0f8f98c0cbef9eb4e50859635f&ava=1' },
     { id: 'pho2', url: 'https://sun9-56.userapi.com/impf/c830709/v830709215/f5ab2/xBYyujDqwDc.jpg?size=200x0&quality=90&crop=100,0,1863,1864&sign=c5e26b0f8f98c0cbef9eb4e50859635f&ava=1' },
@@ -40,9 +45,9 @@ const initialState = {
     { id: 'qb_wht', firstName: 'Дмитрий', lastName: 'Wheatley', url: 'https://avatars.mds.yandex.net/get-pdb/1366122/361691fe-68dc-481e-8c75-d3a49dfec35e/s1200?webp=false' },
     { id: 'best', firstName: 'Лёха', lastName: 'Lurke', url: 'https://avatars.mds.yandex.net/get-pdb/1366122/361691fe-68dc-481e-8c75-d3a49dfec35e/s1200?webp=false' },
     { id: 'easport', firstName: 'Леголас', lastName: 'Legolas', url: 'https://avatars.mds.yandex.net/get-pdb/1366122/361691fe-68dc-481e-8c75-d3a49dfec35e/s1200?webp=false' },
-    { id: '21521', firstName: 'Аркадий', lastName: 'Борода', url: 'https://avatars.mds.yandex.net/get-pdb/1366122/361691fe-68dc-481e-8c75-d3a49dfec35e/s1200?webp=false' },
-    { id: 'bear', firstName: 'Юрий', lastName: 'Ду', url: 'https://avatars.mds.yandex.net/get-pdb/1366122/361691fe-68dc-481e-8c75-d3a49dfec35e/s1200?webp=false' },
-    { id: 'king', firstName: 'Кагеяма', lastName: 'Тобио', url: 'https://avatars.mds.yandex.net/get-pdb/1366122/361691fe-68dc-481e-8c75-d3a49dfec35e/s1200?webp=false' },
+    { id: '21521', firstName: 'Аркадий', lastName: 'Борода', url: 'https://yt3.ggpht.com/a/AATXAJwKtPihONCHGwm_dvM8J2lZs873VdcJfQpaXSUkaQ=s800-c-k-c0xffffffff-no-rj-mo' },
+    { id: 'bear', firstName: 'Юрий', lastName: 'Ду', url: 'https://yt3.ggpht.com/a/AATXAJwKtPihONCHGwm_dvM8J2lZs873VdcJfQpaXSUkaQ=s800-c-k-c0xffffffff-no-rj-mo' },
+    { id: 'king', firstName: 'Кагеяма', lastName: 'Тобио', url: 'https://yt3.ggpht.com/a/AATXAJwKtPihONCHGwm_dvM8J2lZs873VdcJfQpaXSUkaQ=s800-c-k-c0xffffffff-no-rj-mo' },
     { id: 'sun', firstName: 'Хината', lastName: 'Шое', url: 'https://avatars.mds.yandex.net/get-pdb/1366122/361691fe-68dc-481e-8c75-d3a49dfec35e/s1200?webp=false' },
   ],
   subscribe: [
@@ -55,14 +60,23 @@ const initialState = {
 const ProfilePage_Reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST: {
-      const newPost = state.posts
-      newPost.push({ text: 'Новый пост!' })
+      const newPost = state.posts.posts
+      if (state.posts.postText) {
+        newPost.push({ id: '3', text: state.posts.postText, date: Date.now(), authorFirstName: 'Дмитрий', authorLastName: 'Бажаев', authorAvatar: 'https://sun9-56.userapi.com/impf/c830709/v830709215/f5ab2/xBYyujDqwDc.jpg?size=200x0&quality=90&crop=100,0,1863,1864&sign=c5e26b0f8f98c0cbef9eb4e50859635f&ava=1'},)
+        state.posts.postText = ''
+      }
       return {
         ...state,
         ...newPost,
       }
     }
     case ADD_NEW_TEXT_POST:
+      state.posts.postText = action.newText
+      return {
+        ...state,
+      }
+    case ADD_NEW_STATUS:
+      state.user.userStatus = action.newStatus
       return {
         ...state,
       }

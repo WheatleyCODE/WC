@@ -1,10 +1,32 @@
 .userPhotoMain {
     height: 125px;
+    position: relative;
   img {
     height: 100%;
-    border-radius: 5px;
+    border-radius: 6px;
     &:hover {
       cursor: pointer;
     }
+  }
+  &:hover .userPhotoDelete {
+    opacity: 1;
+  }
+}
+.userPhotoDelete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  height: 20px;
+  width: 20px;
+  background-color: rgba(0, 0, 0, 0.479);
+  border-radius: 3px;
+  border: none;
+  color: rgba(255, 255, 255, 0.76);
+  opacity: 0;
+  &:hover {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
   }
 }

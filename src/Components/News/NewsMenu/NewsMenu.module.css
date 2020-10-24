@@ -1,10 +1,11 @@
 .DialogsMenu {
   width: 240px;
-  height: 375px;
+  height: 360px;
   margin-top: 55px;
   background-color:#ffffff;
   border-radius: 5px;
   box-shadow: 0 0 1px rgba(66, 66, 66, 0.5);
+  padding-top: 2px;
 }
 .DialogsMenu div {
   display: flex;
@@ -20,8 +21,8 @@
   color: #4d6c8f;
   padding: 1px 5px;
   padding-left:22px;
-  border-left:2px solid rgb(255, 255, 255);
   font-size: 14px;
+  box-sizing: border-box;
 }
 .navLinkUnder {
   padding-left: 40px;
@@ -38,4 +39,5 @@
 .active {
   border-left: 2px solid #5584b9;
   color: black;
+  font-weight: bold;
 }

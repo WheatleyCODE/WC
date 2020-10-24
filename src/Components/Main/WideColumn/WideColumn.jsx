@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addPostActionCreator } from 'Redux/actions';
+import { addNewStatusActionCreator, addNewTextPostActionCreator, addPostActionCreator } from 'Redux/actions';
 import s from './WideColumn.module.scss';
 import Post from './Post/Post'
 import UserPhoto from './UserPhoto/UserPhoto'
@@ -8,9 +8,9 @@ import UserPhoto from './UserPhoto/UserPhoto'
 function WideColumn(props) {
   const user = { ...props.profileData.user }
   const photo = [...props.profileData.photo]
-  const posts = [...props.profileData.posts]
-  console.log(posts)
+  const posts = [...props.profileData.posts.posts]
   const [moreInfo, setMoreInfo] = useState(false)
+  const [changeStatus, setChangeStatus] = useState(false)
   const userPost = posts.map((obj) => {
     return <Post key={obj.id} param={obj} />
   })
@@ -28,12 +28,30 @@ function WideColumn(props) {
     setMoreInfo((prev) => !prev)
   }
 
+  const onChangeHandler = (event) => {
+    props.addNewText(event.target.value)
+  }
+
+  const changeStatusClickHandler = () => {
+    setChangeStatus((prev) => !prev)
+  }
+  const statusChangeHandler = (event) => {
+    props.addNewStatus(event.target.value)
+  }
+
   return (
     <div className={s.wide_column}>
       <div className={s.info_block}>
         <div className={s.nameBlock}>
           <span className={s.name}>{user.firstName} {user.lastName}</span>
-          <span className={s.status}>{user.userStatus}</span>
+          <button type="button" onClick={changeStatusClickHandler} className={s.status}>{user.userStatus}</button>
+          { changeStatus
+            ? <div className={s.changeStatus}>
+                <input onChange={statusChangeHandler} value={user.userStatus} type="text" />
+                  <button onClick={changeStatusClickHandler} type="button">Сохранить</button>
+              </div>
+            : null }
+
         </div>
         <hr />
         <div className={s.moreInfo}>
@@ -58,8 +76,17 @@ function WideColumn(props) {
         </div>
       </div>
       <div className={s.news_block}>
-        <textarea />
-        <button type="button" onClick={() => { props.addPost() }}>Опубликовать</button>
+        <div className={s.avatarBlock}>
+          <img src={user.avatar} alt="avatar" />
+        </div>
+        <input placeholder="Что у вас нового?" value={props.profileData.posts.postText} onChange={onChangeHandler} />
+        <div className={s.storyPanel}>
+          <button type="button"><i className="fal fa-camera-alt" /></button>
+          <button type="button"><i className="fal fa-play-circle" /></button>
+          <button type="button"><i className="fal fa-music" /></button>
+          <button type="button"><i className="fal fa-newspaper" /></button>
+          <button className={s.pushContent} type="button" onClick={() => { props.addPost() }}>Опубликовать</button>
+        </div>
       </div>
       <div className={s.postColumn}>
         {userPost}
@@ -77,6 +104,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     addPost: () => dispatch(addPostActionCreator()),
+    addNewText: (text) => dispatch(addNewTextPostActionCreator(text)),
+    addNewStatus: (text) => dispatch(addNewStatusActionCreator(text)),
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(WideColumn);

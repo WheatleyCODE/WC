@@ -35,7 +35,7 @@
 }
 .news_block {
   width: 551px;
-  height: 60px;
+  height: 50px;
   background-color:#fdfdfd;
   border-radius:5px;
   margin-top:18px ;
@@ -43,17 +43,61 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.news_block textarea {
-  width: 400px;
-  resize: none;
+  .avatarBlock {
+    width: 60px;
+    height: 50px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 70%;
+      border-radius: 50%;
+    }
+  }
 }
 .news_block button {
-  height:37px ;
+ background-color: rgb(255, 255, 255);
+ border: none;
+ margin: 2px;
+ cursor: pointer;
+ outline: none;
+ i {
+   font-size: 18px;
+   color: rgb(156, 156, 156) ;
+ }
+ &:hover i {
+  color: rgb(107, 107, 107) ;
+ }
+}
+.news_block input {
+  width: 220px;
+  resize: none;
+  border: none;
+  outline: none;
+}
+.news_block .pushContent {
+  height: 30px;
+  background-color: #5181b8;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  outline: none;
+  margin-left: 10px;
+  font-size: 11px;
+  &:hover {
+    background-color:#5181b8da;
+    cursor: pointer;
+  }
 }
 .postColumn {
   display: flex;
   flex-direction: column-reverse;
+}
+.storyPanel {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
 }
 
 
@@ -63,23 +107,56 @@
 
 
 .nameBlock {
+  position: relative;
   width: 100%;
   height: 50px;
   display: flex;
   flex-wrap: wrap;
   padding-top: 10px;
 
-  span.status {
+  button.status {
+    width: 100%;
+    height: 20px;
+    border: none;
+    outline: none;
     font-size: 15px;
-    padding: 0px;
+    padding: 2px 0px;
     padding-left: 10px;
     margin: 7px 10px;
     display: flex;
     align-items: center;
     border-radius: 2px;
+    background-color: #fff;
     &:hover {
-      background-color: rgb(209, 233, 255);
+      background-color: rgba(0, 0, 0, 0.082);
       cursor: pointer;
+    }
+  }
+  .changeStatus {
+    position: absolute;
+    margin-top: 5px;
+    margin-left: -5px;
+    width: calc(100% + 10px);
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 3px rgba(66, 66, 66, 0.5);
+    display: flex;
+    flex-direction: column;
+    input {
+      margin: 10px;
+      width: 95%;
+      height: 25px;
+      padding-left: 5px;
+      outline: none;
+      border: 1px solid rgb(189, 189, 189);
+      &:focus {
+        border: 1px solid rgb(128, 128, 128);
+      }
+    }
+    button {
+      align-self: flex-start;
+      margin-left: 10px;
+      margin-top: 5px;
     }
   }
 }
@@ -111,16 +188,17 @@ span.name {
   padding: 5px;
   display: flex;
   justify-content: space-evenly;
-  color: rgb(0, 0, 47);
+  color: rgb(0, 0, 54);
   font-weight: bold;
   padding-bottom: 20px;
   .numbers {
     width: 100px;
     font-size: 18px;
     text-align: center;
-    padding: 0;
+    padding: 3px;
     &:hover {
       cursor: pointer;
+      color: rgb(0, 5, 98);
     }
     span {
       font-size: 13px;
@@ -141,4 +219,12 @@ span.name {
 }
 .more {
   padding-top: 5px;
+  span {
+    color: rgba(0, 0, 0, 0.794);
+    padding-top: 2px;
+    &:hover {
+      color: black;
+      cursor: pointer;
+    }
+  }
 }
